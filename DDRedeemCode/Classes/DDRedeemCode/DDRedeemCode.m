@@ -11,8 +11,8 @@
 #import "zlib.h"
 
 // Thanks to JeremyP on SO - http://stackoverflow.com/a/7792687/1001803
-#define AntiARCRetain(...) void *retainedThing = (__bridge_retained void *)__VA_ARGS__; retainedThing = retainedThing
-#define AntiARCRelease(...) void *retainedThing = (__bridge void *) __VA_ARGS__; id unretainedThing = (__bridge_transfer id)retainedThing; unretainedThing = nil
+#define AntiARCRetain(...)      void *retainedThing = (__bridge_retained void *)__VA_ARGS__; retainedThing = retainedThing
+#define AntiARCRelease(...)     void *retainedThing = (__bridge void *) __VA_ARGS__; id unretainedThing = (__bridge_transfer id)retainedThing; unretainedThing = nil
 
 
 #define DD_BUNDLE_ID            [[NSBundle mainBundle] bundleIdentifier]
@@ -21,6 +21,8 @@
 
 #ifdef DEBUG
 #define DD_LOGGING              1
+#else
+#define DD_LOGGING              0
 #endif
 
 @implementation NSData (CRC)
