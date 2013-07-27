@@ -1,13 +1,13 @@
 //
 //  DDViewController.m
-//  DDPressCode
+//  DDRedeemCode
 //
 //  Created by Dominik Hádl on 7/26/13.
 //  Copyright (c) 2013 DynamicDust s.r.o. All rights reserved.
 //
 
 #import "DDViewController.h"
-#import "DDPressCode.h"
+#import "DDRedeemCode.h"
 
 @interface DDViewController ()
 
@@ -31,14 +31,14 @@
 }
 
 - (void)redeemPressCode {
-   /* DDPressCode *pressCode = [DDPressCode pressCodeAlertWithCompletionBlock:^(BOOL validCode){
+   /* DDRedeemCode *pressCode = [DDRedeemCode pressCodeAlertWithCompletionBlock:^(BOOL validCode){
         NSLog(@"Block works! Code is valid: %@", validCode ? @"YES!" : @"NO!");
     }];
     [pressCode showRedeemAlert];
     */
     
-    [DDPressCode showPressCodeAlertWithCompletionBlock:^(BOOL validCode){
-        NSLog(@"Block works! Code is valid: %@", validCode ? @"YES!" : @"NO!");
+    [DDRedeemCode showPressCodeAlertWithCompletionBlock:^(BOOL validCode, DDRedeemCodeType codeType){
+        NSLog(@"Block works! Code is valid: %@. Code type: %i.", validCode ? @"YES!" : @"NO!", codeType);
     }];
 }
 

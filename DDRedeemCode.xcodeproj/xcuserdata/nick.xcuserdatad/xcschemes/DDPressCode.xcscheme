@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0184EE3917A30A5000249D16"
-               BuildableName = "DDPressCode.app"
-               BlueprintName = "DDPressCode"
-               ReferencedContainer = "container:DDPressCode.xcodeproj">
+               BuildableName = "DDRedeemCode.app"
+               BlueprintName = "DDRedeemCode"
+               ReferencedContainer = "container:DDRedeemCode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "0184EE5D17A30A5000249D16"
                BuildableName = "DDPressCodeTests.xctest"
                BlueprintName = "DDPressCodeTests"
-               ReferencedContainer = "container:DDPressCode.xcodeproj">
+               ReferencedContainer = "container:DDRedeemCode.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0184EE3917A30A5000249D16"
-            BuildableName = "DDPressCode.app"
-            BlueprintName = "DDPressCode"
-            ReferencedContainer = "container:DDPressCode.xcodeproj">
+            BuildableName = "DDRedeemCode.app"
+            BlueprintName = "DDRedeemCode"
+            ReferencedContainer = "container:DDRedeemCode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0184EE3917A30A5000249D16"
-            BuildableName = "DDPressCode.app"
-            BlueprintName = "DDPressCode"
-            ReferencedContainer = "container:DDPressCode.xcodeproj">
+            BuildableName = "DDRedeemCode.app"
+            BlueprintName = "DDRedeemCode"
+            ReferencedContainer = "container:DDRedeemCode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0184EE3917A30A5000249D16"
-            BuildableName = "DDPressCode.app"
-            BlueprintName = "DDPressCode"
-            ReferencedContainer = "container:DDPressCode.xcodeproj">
+            BuildableName = "DDRedeemCode.app"
+            BlueprintName = "DDRedeemCode"
+            ReferencedContainer = "container:DDRedeemCode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

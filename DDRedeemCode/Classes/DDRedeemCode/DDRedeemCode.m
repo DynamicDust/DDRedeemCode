@@ -1,12 +1,12 @@
 //
-//  DDPressCode.m
-//  DDPressCode
+//  DDRedeemCode.m
+//  DDRedeemCode
 //
 //  Created by Dominik Hádl on 7/26/13.
 //  Copyright (c) 2013 DynamicDust s.r.o. All rights reserved.
 //--------------------------------------------------------------
 
-#import "DDPressCode.h"
+#import "DDRedeemCode.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "zlib.h"
 
@@ -21,14 +21,6 @@
 
 #ifdef DEBUG
 #define DD_LOGGING              1
-#endif
-
-#if DD_LOG_CODES == 1
-    #ifdef DEBUG
-        #warning
-    #elif NDEBUG
-        #error
-    #endif
 #endif
 
 @implementation NSData (CRC)
@@ -96,27 +88,28 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 @end
 
 
-@implementation DDPressCode
+@implementation DDRedeemCode {
+    DDRedeemCodeType _codeType;
+}
 
-+ (void)showPressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode))completionBlock {
-    DDPressCode *pressCode = [[self alloc] initWithCompletionBlock:completionBlock];
++ (void)showPressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType))completionBlock {
+    DDRedeemCode *pressCode = [[self alloc] initWithCompletionBlock:completionBlock];
     AntiARCRetain(pressCode);
     [pressCode showRedeemAlert];
 }
 
-+ (instancetype)pressCodeAlertWithCompletionBlock:(void (^)(BOOL))completionBlock {
-    DDPressCode *pressCode = [[self alloc] initWithCompletionBlock:completionBlock];
++ (instancetype)pressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType))completionBlock {
+    DDRedeemCode *pressCode = [[self alloc] initWithCompletionBlock:completionBlock];
     AntiARCRetain(pressCode);
     return pressCode;
 }
 
 
-- (instancetype)initWithCompletionBlock:(void (^)(BOOL validCode))completionBlock {
+- (instancetype)initWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType))completionBlock {
     self = [super init];
     
     if (self) {
         self.completionBlock = completionBlock;
-        [self logTestingRedeemCodes];
     }
     return self;
 }
@@ -172,77 +165,83 @@ void CRC32Table(uint32_t *table, uint32_t poly)
         }
     }
     
-    for (int i = 1; i < (DDPressCodeTypeCount + DD_CUSTOM_CODES_ENABLED); i++) {
+    for (int i = 1; i < (DDRedeemCodeTypeCount + DD_CUSTOM_CODES_ENABLED); i++) {
         switch (i) {
                 
             // 1. Check hour-valid code
-            case DDPressCodeTypeHourly:
+            case DDRedeemCodeTypeHourly:
                 if (redeemCodeInt == [data CRC32WithSeed:hourSeed]) {
                     if (DD_LOGGING == 1)
                         NSLog(@"Valid key for date (d/m/y): %i. %i. %i %i:00 -> %i:00.",
                               DD_CURRENT_TIME.day, DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year, DD_CURRENT_TIME.hour, DD_CURRENT_TIME.hour+1);
                     
-                    // Valid !                    
+                    // Valid !
+                    _codeType = DDRedeemCodeTypeHourly;
                     return YES;
                 }
                 break;
                 
             // 2. Check day-valid code
-            case DDPressCodeTypeDaily:
+            case DDRedeemCodeTypeDaily:
                 if (redeemCodeInt == [data CRC32WithSeed:daySeed]) {
                     if (DD_LOGGING == 1)
                         NSLog(@"Valid key for date (d/m/y): %i. %i. %i 00:00 -> %i. %i. %i 00:00.",
                               DD_CURRENT_TIME.day, DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year, DD_CURRENT_TIME.day+1, DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year);
                     
-                    // Valid !                    
+                    // Valid !
+                    _codeType = DDRedeemCodeTypeDaily;
                     return YES;
                 }
                 break;
                 
             // 3. Check week-valid code
-            case DDPressCodeTypeWeekly:
+            case DDRedeemCodeTypeWeekly:
                 if (redeemCodeInt == [data CRC32WithSeed:weekSeed]) {
                     if (DD_LOGGING == 1)
                         NSLog(@"Valid key for week number: %i of year: %i.",
                               (int)DD_CURRENT_TIME_WEEK, (int)DD_CURRENT_TIME.year);
                     
-                    // Valid !                    
+                    // Valid !
+                    _codeType = DDRedeemCodeTypeWeekly;
                     return YES;
                 }
                 break;
                 
             // 4. Check month-valid code
-            case DDPressCodeTypeMonthly:
+            case DDRedeemCodeTypeMonthly:
                 if (redeemCodeInt == [data CRC32WithSeed:monthSeed]) {
                     if (DD_LOGGING == 1)
                         NSLog(@"Valid key for date (m/y): %i. %i -> %i. %i.",
                               DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year, DD_CURRENT_TIME.month+1, (int)DD_CURRENT_TIME.year);
                     
-                    // Valid !                    
+                    // Valid !
+                    _codeType = DDRedeemCodeTypeMonthly;
                     return YES;
                 }
                 break;
                 
             // 5. Check year-valid code
-            case DDPressCodeTypeYearly:
+            case DDRedeemCodeTypeYearly:
                 if (redeemCodeInt == [data CRC32WithSeed:yearSeed]) {
                     if (DD_LOGGING == 1)
                         NSLog(@"Valid key for date (y): %i -> %i.",
                               (int)DD_CURRENT_TIME.year, (int)DD_CURRENT_TIME.year+1);
                     
                     // Valid !
+                    _codeType = DDRedeemCodeTypeYearly;
                     return YES;
                 }
                 break;
                 
             // 5. Check master code
-            case DDPressCodeTypeMaster:
+            case DDRedeemCodeTypeMaster:
                 if (redeemCodeInt == [data CRC32WithSeed:masterSeed]) {
                     if (DD_LOGGING == 1)
                         NSLog(@"Valid key forever, or until you change the master secret (%@).",
                               DD_MASTER_SECRET);
                     
                     // Valid !
+                    _codeType = DDRedeemCodeTypeMaster;
                     return YES;
                 }
                 break;
@@ -256,6 +255,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                                 NSLog(@"Valid CUSTOM key.");
                             
                             // Valid !
+                            _codeType = DDRedeemCodeTypeCustom;
                             return YES;
                         }
                     }
@@ -280,65 +280,15 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     return NO;
 }
 
-- (void) logTestingRedeemCodes {
-    
-    // Base data
-    NSData *data = [DD_BUNDLE_ID dataUsingEncoding:NSUTF8StringEncoding];
-    
-    
-    // hour-code seed
-    uint32_t hourSeed       = [DD_MASTER_SECRET intValue] + DD_CURRENT_TIME.hour + DD_CURRENT_TIME.day + DD_CURRENT_TIME_WEEK + DD_CURRENT_TIME.month + DD_CURRENT_TIME.year;
-    
-    // day-code seed
-    uint32_t daySeed        = [DD_MASTER_SECRET intValue] + DD_CURRENT_TIME.day + DD_CURRENT_TIME_WEEK + DD_CURRENT_TIME.month + DD_CURRENT_TIME.year;
-
-    // week-code seed
-    uint32_t weekSeed       = [DD_MASTER_SECRET intValue] + DD_CURRENT_TIME_WEEK + DD_CURRENT_TIME.month + DD_CURRENT_TIME.year;
-
-    // month-code seed
-    uint32_t monthSeed      = [DD_MASTER_SECRET intValue] + DD_CURRENT_TIME.month + DD_CURRENT_TIME.year;
-
-    // year-code seed
-    uint32_t yearSeed       = [DD_MASTER_SECRET intValue] + DD_CURRENT_TIME.year;
-    
-    // master-code seed
-    uint32_t masterSeed     = [DD_MASTER_SECRET intValue];
-    
-    for (int i = 1; i < 7; i++) {
-        switch (i) {
-            case 1:
-                
-                break;
-            case 2:
-                NSLog(@"%u", [data CRC32WithSeed:daySeed]);
-                break;
-            case 3:
-                NSLog(@"%u", [data CRC32WithSeed:weekSeed]);
-                break;
-            case 4:
-                NSLog(@"%u", [data CRC32WithSeed:monthSeed]);
-                break;
-            case 5:
-                NSLog(@"%u", [data CRC32WithSeed:yearSeed]);
-                break;
-            case 6:
-                NSLog(@"%u", [data CRC32WithSeed:masterSeed]);
-                break;
-            default:
-                break;
-        }
-    }
-
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         NSString *redeemCode = [alertView textFieldAtIndex:0].text;
         BOOL isCodeValid = NO;
+        _codeType = DDRedeemCodeTypeNone;
         if ([self isRedeemCodeValid:redeemCode]) {
             isCodeValid = YES;
         }
-        self.completionBlock(isCodeValid);
+        self.completionBlock(isCodeValid, _codeType);
     }
     alertView.delegate = nil;
     AntiARCRelease(self);

@@ -10,36 +10,32 @@
 		0184EE3E17A30A5000249D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE3D17A30A5000249D16 /* Foundation.framework */; };
 		0184EE4017A30A5000249D16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE3F17A30A5000249D16 /* CoreGraphics.framework */; };
 		0184EE4217A30A5000249D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE4117A30A5000249D16 /* UIKit.framework */; };
-		0184EE4817A30A5000249D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0184EE4617A30A5000249D16 /* InfoPlist.strings */; };
 		0184EE4A17A30A5000249D16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE4917A30A5000249D16 /* main.m */; };
 		0184EE4E17A30A5000249D16 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE4D17A30A5000249D16 /* DDAppDelegate.m */; };
 		0184EE5717A30A5000249D16 /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE5617A30A5000249D16 /* DDViewController.m */; };
-		01BD99D617A30D1E00F42302 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD99D517A30D1E00F42302 /* Default-568h@2x.png */; };
-		01BD99D917A3108100F42302 /* DDPressCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD99D817A3108100F42302 /* DDPressCode.m */; };
-		01BD99E017A3D9BE00F42302 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD99DF17A3D9BE00F42302 /* Base64.m */; };
+		01BD99D917A3108100F42302 /* DDRedeemCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD99D817A3108100F42302 /* DDRedeemCode.m */; };
 		01BD99E217A3EDA200F42302 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BD99E117A3EDA200F42302 /* libz.dylib */; };
+		01BD99E817A4342600F42302 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD99E417A4342600F42302 /* Default-568h@2x.png */; };
+		01BD99E917A4342600F42302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01BD99E617A4342600F42302 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0184EE3A17A30A5000249D16 /* DDPressCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDPressCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0184EE3A17A30A5000249D16 /* DDRedeemCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDRedeemCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0184EE3D17A30A5000249D16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0184EE3F17A30A5000249D16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0184EE4117A30A5000249D16 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0184EE4517A30A5000249D16 /* DDPressCode-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDPressCode-Info.plist"; sourceTree = "<group>"; };
-		0184EE4717A30A5000249D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0184EE4917A30A5000249D16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0184EE4B17A30A5000249D16 /* DDPressCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDPressCode-Prefix.pch"; sourceTree = "<group>"; };
-		0184EE4C17A30A5000249D16 /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAppDelegate.h; sourceTree = "<group>"; };
-		0184EE4D17A30A5000249D16 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
-		0184EE5517A30A5000249D16 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
+		0184EE4517A30A5000249D16 /* DDRedeemCode-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDRedeemCode-Info.plist"; sourceTree = "<group>"; };
+		0184EE4917A30A5000249D16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0184EE4B17A30A5000249D16 /* DDRedeemCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDRedeemCode-Prefix.pch"; sourceTree = "<group>"; };
+		0184EE4C17A30A5000249D16 /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DDAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0184EE4D17A30A5000249D16 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DDAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0184EE5517A30A5000249D16 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DDViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0184EE5617A30A5000249D16 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
-		0184EE5F17A30A5000249D16 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		01BD99D517A30D1E00F42302 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		01BD99D717A3108100F42302 /* DDPressCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDPressCode.h; path = DDPressCode/DDPressCode.h; sourceTree = "<group>"; };
-		01BD99D817A3108100F42302 /* DDPressCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDPressCode.m; path = DDPressCode/DDPressCode.m; sourceTree = "<group>"; };
-		01BD99DE17A3D9BE00F42302 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		01BD99DF17A3D9BE00F42302 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		01BD99D717A3108100F42302 /* DDRedeemCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRedeemCode.h; sourceTree = "<group>"; };
+		01BD99D817A3108100F42302 /* DDRedeemCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRedeemCode.m; sourceTree = "<group>"; };
 		01BD99E117A3EDA200F42302 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		01BD99E417A4342600F42302 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		01BD99E717A4342600F42302 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +56,9 @@
 		0184EE3117A30A5000249D16 = {
 			isa = PBXGroup;
 			children = (
-				01BD99E117A3EDA200F42302 /* libz.dylib */,
 				0184EE4317A30A5000249D16 /* Classes */,
+				01BD99E317A433DA00F42302 /* Resources */,
+				0184EE4417A30A5000249D16 /* Supporting Files */,
 				0184EE3C17A30A5000249D16 /* Frameworks */,
 				0184EE3B17A30A5000249D16 /* Products */,
 			);
@@ -70,7 +67,7 @@
 		0184EE3B17A30A5000249D16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0184EE3A17A30A5000249D16 /* DDPressCode.app */,
+				0184EE3A17A30A5000249D16 /* DDRedeemCode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,10 +75,10 @@
 		0184EE3C17A30A5000249D16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01BD99E117A3EDA200F42302 /* libz.dylib */,
 				0184EE3D17A30A5000249D16 /* Foundation.framework */,
 				0184EE3F17A30A5000249D16 /* CoreGraphics.framework */,
 				0184EE4117A30A5000249D16 /* UIKit.framework */,
-				0184EE5F17A30A5000249D16 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,35 +86,32 @@
 		0184EE4317A30A5000249D16 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				01BD99DD17A3D9BE00F42302 /* Base64 */,
-				01BD99DA17A3108600F42302 /* DDPressCode */,
+				01BD99DA17A3108600F42302 /* DDRedeemCode */,
 				01BD99DC17A3109800F42302 /* View Controller */,
 				01BD99DB17A3109100F42302 /* App Delegate */,
-				0184EE4417A30A5000249D16 /* Supporting Files */,
 			);
 			name = Classes;
-			path = DDPressCode;
+			path = DDRedeemCode/Classes;
 			sourceTree = "<group>";
 		};
 		0184EE4417A30A5000249D16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				01BD99D517A30D1E00F42302 /* Default-568h@2x.png */,
-				0184EE4517A30A5000249D16 /* DDPressCode-Info.plist */,
-				0184EE4617A30A5000249D16 /* InfoPlist.strings */,
+				0184EE4517A30A5000249D16 /* DDRedeemCode-Info.plist */,
 				0184EE4917A30A5000249D16 /* main.m */,
-				0184EE4B17A30A5000249D16 /* DDPressCode-Prefix.pch */,
+				0184EE4B17A30A5000249D16 /* DDRedeemCode-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = "DDRedeemCode/Supporting Files";
 			sourceTree = "<group>";
 		};
-		01BD99DA17A3108600F42302 /* DDPressCode */ = {
+		01BD99DA17A3108600F42302 /* DDRedeemCode */ = {
 			isa = PBXGroup;
 			children = (
-				01BD99D717A3108100F42302 /* DDPressCode.h */,
-				01BD99D817A3108100F42302 /* DDPressCode.m */,
+				01BD99D717A3108100F42302 /* DDRedeemCode.h */,
+				01BD99D817A3108100F42302 /* DDRedeemCode.m */,
 			);
-			name = DDPressCode;
+			path = DDRedeemCode;
 			sourceTree = "<group>";
 		};
 		01BD99DB17A3109100F42302 /* App Delegate */ = {
@@ -127,6 +121,7 @@
 				0184EE4D17A30A5000249D16 /* DDAppDelegate.m */,
 			);
 			name = "App Delegate";
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		01BD99DC17A3109800F42302 /* View Controller */ = {
@@ -136,23 +131,33 @@
 				0184EE5617A30A5000249D16 /* DDViewController.m */,
 			);
 			name = "View Controller";
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		01BD99DD17A3D9BE00F42302 /* Base64 */ = {
+		01BD99E317A433DA00F42302 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01BD99DE17A3D9BE00F42302 /* Base64.h */,
-				01BD99DF17A3D9BE00F42302 /* Base64.m */,
+				01BD99E417A4342600F42302 /* Default-568h@2x.png */,
+				01BD99E517A4342600F42302 /* en.lproj */,
 			);
-			path = Base64;
+			name = Resources;
+			path = DDRedeemCode/Resources;
+			sourceTree = "<group>";
+		};
+		01BD99E517A4342600F42302 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				01BD99E617A4342600F42302 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0184EE3917A30A5000249D16 /* DDPressCode */ = {
+		0184EE3917A30A5000249D16 /* DDRedeemCode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0184EE6F17A30A5000249D16 /* Build configuration list for PBXNativeTarget "DDPressCode" */;
+			buildConfigurationList = 0184EE6F17A30A5000249D16 /* Build configuration list for PBXNativeTarget "DDRedeemCode" */;
 			buildPhases = (
 				0184EE3617A30A5000249D16 /* Sources */,
 				0184EE3717A30A5000249D16 /* Frameworks */,
@@ -163,9 +168,9 @@
 			);
 			dependencies = (
 			);
-			name = DDPressCode;
+			name = DDRedeemCode;
 			productName = DDPressCode;
-			productReference = 0184EE3A17A30A5000249D16 /* DDPressCode.app */;
+			productReference = 0184EE3A17A30A5000249D16 /* DDRedeemCode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +191,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0184EE3517A30A5000249D16 /* Build configuration list for PBXProject "DDPressCode" */;
+			buildConfigurationList = 0184EE3517A30A5000249D16 /* Build configuration list for PBXProject "DDRedeemCode" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -199,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0184EE3917A30A5000249D16 /* DDPressCode */,
+				0184EE3917A30A5000249D16 /* DDRedeemCode */,
 			);
 		};
 /* End PBXProject section */
@@ -209,8 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0184EE4817A30A5000249D16 /* InfoPlist.strings in Resources */,
-				01BD99D617A30D1E00F42302 /* Default-568h@2x.png in Resources */,
+				01BD99E817A4342600F42302 /* Default-568h@2x.png in Resources */,
+				01BD99E917A4342600F42302 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,18 +245,17 @@
 				0184EE4E17A30A5000249D16 /* DDAppDelegate.m in Sources */,
 				0184EE5717A30A5000249D16 /* DDViewController.m in Sources */,
 				0184EE4A17A30A5000249D16 /* main.m in Sources */,
-				01BD99D917A3108100F42302 /* DDPressCode.m in Sources */,
-				01BD99E017A3D9BE00F42302 /* Base64.m in Sources */,
+				01BD99D917A3108100F42302 /* DDRedeemCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0184EE4617A30A5000249D16 /* InfoPlist.strings */ = {
+		01BD99E617A4342600F42302 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0184EE4717A30A5000249D16 /* en */,
+				01BD99E717A4342600F42302 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -314,6 +319,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -335,11 +341,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDPressCode/DDPressCode-Prefix.pch";
-				INFOPLIST_FILE = "DDPressCode/DDPressCode-Info.plist";
+				GCC_PREFIX_HEADER = "DDRedeemCode/Supporting Files/DDRedeemCode-Prefix.pch";
+				INFOPLIST_FILE = "DDRedeemCode/Supporting Files/DDRedeemCode-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DDRedeemCode;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -350,11 +357,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDPressCode/DDPressCode-Prefix.pch";
-				INFOPLIST_FILE = "DDPressCode/DDPressCode-Info.plist";
+				GCC_PREFIX_HEADER = "DDRedeemCode/Supporting Files/DDRedeemCode-Prefix.pch";
+				INFOPLIST_FILE = "DDRedeemCode/Supporting Files/DDRedeemCode-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DDRedeemCode;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -362,7 +370,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0184EE3517A30A5000249D16 /* Build configuration list for PBXProject "DDPressCode" */ = {
+		0184EE3517A30A5000249D16 /* Build configuration list for PBXProject "DDRedeemCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0184EE6D17A30A5000249D16 /* Debug */,
@@ -371,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0184EE6F17A30A5000249D16 /* Build configuration list for PBXNativeTarget "DDPressCode" */ = {
+		0184EE6F17A30A5000249D16 /* Build configuration list for PBXNativeTarget "DDRedeemCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0184EE7017A30A5000249D16 /* Debug */,
