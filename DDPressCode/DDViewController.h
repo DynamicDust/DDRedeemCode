@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DDViewController : UIViewController
+@interface DDViewController : UIViewController {
+    UIButton *_redeemButton;
+}
 
 @end

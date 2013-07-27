@@ -13,26 +13,12 @@
 		0184EE4817A30A5000249D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0184EE4617A30A5000249D16 /* InfoPlist.strings */; };
 		0184EE4A17A30A5000249D16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE4917A30A5000249D16 /* main.m */; };
 		0184EE4E17A30A5000249D16 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE4D17A30A5000249D16 /* DDAppDelegate.m */; };
-		0184EE5117A30A5000249D16 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0184EE4F17A30A5000249D16 /* Main_iPhone.storyboard */; };
-		0184EE5417A30A5000249D16 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0184EE5217A30A5000249D16 /* Main_iPad.storyboard */; };
 		0184EE5717A30A5000249D16 /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE5617A30A5000249D16 /* DDViewController.m */; };
-		0184EE5917A30A5000249D16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0184EE5817A30A5000249D16 /* Images.xcassets */; };
-		0184EE6017A30A5000249D16 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE5F17A30A5000249D16 /* XCTest.framework */; };
-		0184EE6117A30A5000249D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE3D17A30A5000249D16 /* Foundation.framework */; };
-		0184EE6217A30A5000249D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE4117A30A5000249D16 /* UIKit.framework */; };
-		0184EE6A17A30A5000249D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0184EE6817A30A5000249D16 /* InfoPlist.strings */; };
-		0184EE6C17A30A5000249D16 /* DDPressCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184EE6B17A30A5000249D16 /* DDPressCodeTests.m */; };
+		01BD99D617A30D1E00F42302 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD99D517A30D1E00F42302 /* Default-568h@2x.png */; };
+		01BD99D917A3108100F42302 /* DDPressCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD99D817A3108100F42302 /* DDPressCode.m */; };
+		01BD99E017A3D9BE00F42302 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD99DF17A3D9BE00F42302 /* Base64.m */; };
+		01BD99E217A3EDA200F42302 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BD99E117A3EDA200F42302 /* libz.dylib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0184EE6317A30A5000249D16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0184EE3217A30A5000249D16 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0184EE3917A30A5000249D16;
-			remoteInfo = DDPressCode;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0184EE3A17A30A5000249D16 /* DDPressCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDPressCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,16 +31,15 @@
 		0184EE4B17A30A5000249D16 /* DDPressCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDPressCode-Prefix.pch"; sourceTree = "<group>"; };
 		0184EE4C17A30A5000249D16 /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAppDelegate.h; sourceTree = "<group>"; };
 		0184EE4D17A30A5000249D16 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
-		0184EE5017A30A5000249D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		0184EE5317A30A5000249D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0184EE5517A30A5000249D16 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
 		0184EE5617A30A5000249D16 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
-		0184EE5817A30A5000249D16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0184EE5E17A30A5000249D16 /* DDPressCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDPressCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0184EE5F17A30A5000249D16 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0184EE6717A30A5000249D16 /* DDPressCodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDPressCodeTests-Info.plist"; sourceTree = "<group>"; };
-		0184EE6917A30A5000249D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0184EE6B17A30A5000249D16 /* DDPressCodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPressCodeTests.m; sourceTree = "<group>"; };
+		01BD99D517A30D1E00F42302 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		01BD99D717A3108100F42302 /* DDPressCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDPressCode.h; path = DDPressCode/DDPressCode.h; sourceTree = "<group>"; };
+		01BD99D817A3108100F42302 /* DDPressCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDPressCode.m; path = DDPressCode/DDPressCode.m; sourceTree = "<group>"; };
+		01BD99DE17A3D9BE00F42302 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		01BD99DF17A3D9BE00F42302 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		01BD99E117A3EDA200F42302 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,19 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BD99E217A3EDA200F42302 /* libz.dylib in Frameworks */,
 				0184EE4017A30A5000249D16 /* CoreGraphics.framework in Frameworks */,
 				0184EE4217A30A5000249D16 /* UIKit.framework in Frameworks */,
 				0184EE3E17A30A5000249D16 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0184EE5B17A30A5000249D16 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0184EE6017A30A5000249D16 /* XCTest.framework in Frameworks */,
-				0184EE6217A30A5000249D16 /* UIKit.framework in Frameworks */,
-				0184EE6117A30A5000249D16 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +60,8 @@
 		0184EE3117A30A5000249D16 = {
 			isa = PBXGroup;
 			children = (
-				0184EE4317A30A5000249D16 /* DDPressCode */,
-				0184EE6517A30A5000249D16 /* DDPressCodeTests */,
+				01BD99E117A3EDA200F42302 /* libz.dylib */,
+				0184EE4317A30A5000249D16 /* Classes */,
 				0184EE3C17A30A5000249D16 /* Frameworks */,
 				0184EE3B17A30A5000249D16 /* Products */,
 			);
@@ -95,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				0184EE3A17A30A5000249D16 /* DDPressCode.app */,
-				0184EE5E17A30A5000249D16 /* DDPressCodeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,24 +86,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0184EE4317A30A5000249D16 /* DDPressCode */ = {
+		0184EE4317A30A5000249D16 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0184EE4C17A30A5000249D16 /* DDAppDelegate.h */,
-				0184EE4D17A30A5000249D16 /* DDAppDelegate.m */,
-				0184EE4F17A30A5000249D16 /* Main_iPhone.storyboard */,
-				0184EE5217A30A5000249D16 /* Main_iPad.storyboard */,
-				0184EE5517A30A5000249D16 /* DDViewController.h */,
-				0184EE5617A30A5000249D16 /* DDViewController.m */,
-				0184EE5817A30A5000249D16 /* Images.xcassets */,
+				01BD99DD17A3D9BE00F42302 /* Base64 */,
+				01BD99DA17A3108600F42302 /* DDPressCode */,
+				01BD99DC17A3109800F42302 /* View Controller */,
+				01BD99DB17A3109100F42302 /* App Delegate */,
 				0184EE4417A30A5000249D16 /* Supporting Files */,
 			);
+			name = Classes;
 			path = DDPressCode;
 			sourceTree = "<group>";
 		};
 		0184EE4417A30A5000249D16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01BD99D517A30D1E00F42302 /* Default-568h@2x.png */,
 				0184EE4517A30A5000249D16 /* DDPressCode-Info.plist */,
 				0184EE4617A30A5000249D16 /* InfoPlist.strings */,
 				0184EE4917A30A5000249D16 /* main.m */,
@@ -137,22 +111,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0184EE6517A30A5000249D16 /* DDPressCodeTests */ = {
+		01BD99DA17A3108600F42302 /* DDPressCode */ = {
 			isa = PBXGroup;
 			children = (
-				0184EE6B17A30A5000249D16 /* DDPressCodeTests.m */,
-				0184EE6617A30A5000249D16 /* Supporting Files */,
+				01BD99D717A3108100F42302 /* DDPressCode.h */,
+				01BD99D817A3108100F42302 /* DDPressCode.m */,
 			);
-			path = DDPressCodeTests;
+			name = DDPressCode;
 			sourceTree = "<group>";
 		};
-		0184EE6617A30A5000249D16 /* Supporting Files */ = {
+		01BD99DB17A3109100F42302 /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				0184EE6717A30A5000249D16 /* DDPressCodeTests-Info.plist */,
-				0184EE6817A30A5000249D16 /* InfoPlist.strings */,
+				0184EE4C17A30A5000249D16 /* DDAppDelegate.h */,
+				0184EE4D17A30A5000249D16 /* DDAppDelegate.m */,
 			);
-			name = "Supporting Files";
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		01BD99DC17A3109800F42302 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0184EE5517A30A5000249D16 /* DDViewController.h */,
+				0184EE5617A30A5000249D16 /* DDViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		01BD99DD17A3D9BE00F42302 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				01BD99DE17A3D9BE00F42302 /* Base64.h */,
+				01BD99DF17A3D9BE00F42302 /* Base64.m */,
+			);
+			path = Base64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +156,7 @@
 			buildPhases = (
 				0184EE3617A30A5000249D16 /* Sources */,
 				0184EE3717A30A5000249D16 /* Frameworks */,
+				01BD99D417A30AB300F42302 /* ShellScript */,
 				0184EE3817A30A5000249D16 /* Resources */,
 			);
 			buildRules = (
@@ -175,24 +168,6 @@
 			productReference = 0184EE3A17A30A5000249D16 /* DDPressCode.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0184EE5D17A30A5000249D16 /* DDPressCodeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0184EE7217A30A5000249D16 /* Build configuration list for PBXNativeTarget "DDPressCodeTests" */;
-			buildPhases = (
-				0184EE5A17A30A5000249D16 /* Sources */,
-				0184EE5B17A30A5000249D16 /* Frameworks */,
-				0184EE5C17A30A5000249D16 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0184EE6417A30A5000249D16 /* PBXTargetDependency */,
-			);
-			name = DDPressCodeTests;
-			productName = DDPressCodeTests;
-			productReference = 0184EE5E17A30A5000249D16 /* DDPressCodeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +178,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "DynamicDust s.r.o.";
 				TargetAttributes = {
+					0184EE3917A30A5000249D16 = {
+						DevelopmentTeam = WG3BA37B73;
+					};
 					0184EE5D17A30A5000249D16 = {
 						TestTargetID = 0184EE3917A30A5000249D16;
 					};
@@ -222,7 +200,6 @@
 			projectRoot = "";
 			targets = (
 				0184EE3917A30A5000249D16 /* DDPressCode */,
-				0184EE5D17A30A5000249D16 /* DDPressCodeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,22 +209,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0184EE5417A30A5000249D16 /* Main_iPad.storyboard in Resources */,
-				0184EE5917A30A5000249D16 /* Images.xcassets in Resources */,
-				0184EE5117A30A5000249D16 /* Main_iPhone.storyboard in Resources */,
 				0184EE4817A30A5000249D16 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0184EE5C17A30A5000249D16 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0184EE6A17A30A5000249D16 /* InfoPlist.strings in Resources */,
+				01BD99D617A30D1E00F42302 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01BD99D417A30AB300F42302 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"`\nbuildNumber=`(expr $buildNumber + 1)`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${buildNumber}\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0184EE3617A30A5000249D16 /* Sources */ = {
@@ -257,56 +240,18 @@
 				0184EE4E17A30A5000249D16 /* DDAppDelegate.m in Sources */,
 				0184EE5717A30A5000249D16 /* DDViewController.m in Sources */,
 				0184EE4A17A30A5000249D16 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0184EE5A17A30A5000249D16 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0184EE6C17A30A5000249D16 /* DDPressCodeTests.m in Sources */,
+				01BD99D917A3108100F42302 /* DDPressCode.m in Sources */,
+				01BD99E017A3D9BE00F42302 /* Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0184EE6417A30A5000249D16 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0184EE3917A30A5000249D16 /* DDPressCode */;
-			targetProxy = 0184EE6317A30A5000249D16 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0184EE4617A30A5000249D16 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0184EE4717A30A5000249D16 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0184EE4F17A30A5000249D16 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0184EE5017A30A5000249D16 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		0184EE5217A30A5000249D16 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0184EE5317A30A5000249D16 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		0184EE6817A30A5000249D16 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0184EE6917A30A5000249D16 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -389,9 +334,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DDPressCode/DDPressCode-Prefix.pch";
 				INFOPLIST_FILE = "DDPressCode/DDPressCode-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,51 +349,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DDPressCode/DDPressCode-Prefix.pch";
 				INFOPLIST_FILE = "DDPressCode/DDPressCode-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		0184EE7317A30A5000249D16 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDPressCode.app/DDPressCode";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDPressCode/DDPressCode-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DDPressCodeTests/DDPressCodeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		0184EE7417A30A5000249D16 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDPressCode.app/DDPressCode";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDPressCode/DDPressCode-Prefix.pch";
-				INFOPLIST_FILE = "DDPressCodeTests/DDPressCodeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -469,14 +378,7 @@
 				0184EE7117A30A5000249D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		0184EE7217A30A5000249D16 /* Build configuration list for PBXNativeTarget "DDPressCodeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0184EE7317A30A5000249D16 /* Debug */,
-				0184EE7417A30A5000249D16 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

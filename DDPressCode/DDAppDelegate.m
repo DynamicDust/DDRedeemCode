@@ -7,12 +7,18 @@
 //
 
 #import "DDAppDelegate.h"
+#import "DDViewController.h"
 
 @implementation DDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.viewController = [[DDViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+    [self.window addSubview:self.viewController.view];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
