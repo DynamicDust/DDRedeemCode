@@ -18,7 +18,7 @@
  *              2. DDRedeemCodeSecurityTypeLocalComplex
  *              3. DDRedeemCodeSecurityTypeServerSide
  */
-#define DD_SECURITY_TYPE DDRedeemCodeSecurityTypeLocalSimple
+#define DD_SECURITY_TYPE DDRedeemCodeSecurityTypeLocalComplex
 
 //--------------------------------------------------------------
 // Simple Verification
@@ -52,7 +52,7 @@
 
 #define DD_COMPLEX_SEED_BLACKLIST                   @[@"123456789", @"987654321"]
 
-#define DD_COMPLEX_CHECK_KEY                        01 | 03
+#define DD_COMPLEX_CHECK_KEY                        01
 
 //--------------------------------------------------------------
 // Server-Side Based Verification

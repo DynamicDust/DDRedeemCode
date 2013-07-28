@@ -129,6 +129,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     
     if (self) {
         self.completionBlock = completionBlock;
+        NSLog(@"%@", [self makeRedeemCodeWithSeed:456789]);
     }
     return self;
 }
@@ -427,7 +428,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 
 - (DDRedeemCodeStatus)checkCode:(NSString *)code {
     unsigned int seed, codeByte;
-    Byte b;
+    Byte b, kb;
     DDRedeemCodeStatus result = DDRedeemCodeStatusInvalid;
     
     if ([self checkCodeChecksum:code] == NO) return result;
@@ -449,28 +450,31 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     
 #if DD_COMPLEX_CHECK_KEY == 00
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(8, 2)]] scanHexInt:&codeByte];
-    Byte kb = (Byte)codeByte;
+    kb = (Byte)codeByte;
     b = [self getCodeByteWithSeed:seed andByteA:24 byteB:3 byteC:200];
     if (kb != b) {
         return result;
     }
-#elif DD_COMPLEX_CHECK_KEY == 01
+#endif
+#if DD_COMPLEX_CHECK_KEY == 01
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(10, 2)]] scanHexInt:&codeByte];
-    Byte kb = (Byte)codeByte;
+    kb = (Byte)codeByte;
     b = [self getCodeByteWithSeed:seed andByteA:10 byteB:0 byteC:56];
     if (kb != b) {
         return result;
     }
-#elif DD_COMPLEX_CHECK_KEY == 02
+#endif
+#if DD_COMPLEX_CHECK_KEY == 02
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(12, 2)]] scanHexInt:&codeByte];
-    Byte kb = (Byte)codeByte;
+    kb = (Byte)codeByte;
     b = [self getCodeByteWithSeed:seed andByteA:1 byteB:2 byteC:91];
     if (kb != b) {
         return result;
     }
-#elif DD_COMPLEX_CHECK_KEY == 03
+#endif
+#if DD_COMPLEX_CHECK_KEY == 03
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(14, 2)]] scanHexInt:&codeByte];
-    Byte kb = (Byte)codeByte;
+    kb = (Byte)codeByte;
     b = [self getCodeByteWithSeed:seed andByteA:7 byteB:1 byteC:100];
     if (kb != b) {
         return result;
