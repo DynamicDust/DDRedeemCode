@@ -102,6 +102,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 @implementation DDRedeemCode {
     DDRedeemCodeType            _codeType;
     DDRedeemCodeStatus          _codeStatus;
+    int _codeBytes[12];
 }
 
 //--------------------------------------------------------------
@@ -129,7 +130,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     
     if (self) {
         self.completionBlock = completionBlock;
-        NSLog(@"%@", [self makeRedeemCodeWithSeed:456789]);
+        NSLog(@"%@", [self makeRedeemCodeWithSeed:0x456a456bdf48e61a]);
     }
     return self;
 }
@@ -367,6 +368,8 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 //--------------------------------------------------------------
 #pragma mark - Partial Redeem Code Verification -
 //--------------------------------------------------------------
+// Based on this article by Brandon Staggs
+// http://www.brandonstaggs.com/2007/07/26/implementing-a-partial-serial-number-verification-system-in-delphi/
 
 - (Byte) getCodeByteWithSeed:(int64_t)seed andByteA:(Byte)a byteB:(Byte)b byteC:(Byte)c {
     
@@ -430,7 +433,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     unsigned int seed, codeByte;
     Byte b, kb;
     DDRedeemCodeStatus result = DDRedeemCodeStatusInvalid;
-    
+    int bytesForKeyBytes[12] = DD_COMPLEX_CODE_BYTES;
     if ([self checkCodeChecksum:code] == NO) return result;
     
     code = [code stringByReplacingOccurrencesOfString:@"-" withString:@""];
@@ -451,7 +454,10 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 #if DD_COMPLEX_CHECK_KEY == 00
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(8, 2)]] scanHexInt:&codeByte];
     kb = (Byte)codeByte;
-    b = [self getCodeByteWithSeed:seed andByteA:24 byteB:3 byteC:200];
+    b = [self getCodeByteWithSeed: seed
+                         andByteA: bytesForKeyBytes[0]
+                            byteB: bytesForKeyBytes[1]
+                            byteC: bytesForKeyBytes[2]];
     if (kb != b) {
         return result;
     }
@@ -459,7 +465,10 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 #if DD_COMPLEX_CHECK_KEY == 01
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(10, 2)]] scanHexInt:&codeByte];
     kb = (Byte)codeByte;
-    b = [self getCodeByteWithSeed:seed andByteA:10 byteB:0 byteC:56];
+    b = [self getCodeByteWithSeed: seed
+                         andByteA: bytesForKeyBytes[3]
+                            byteB: bytesForKeyBytes[4]
+                            byteC: bytesForKeyBytes[5]];
     if (kb != b) {
         return result;
     }
@@ -467,7 +476,10 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 #if DD_COMPLEX_CHECK_KEY == 02
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(12, 2)]] scanHexInt:&codeByte];
     kb = (Byte)codeByte;
-    b = [self getCodeByteWithSeed:seed andByteA:1 byteB:2 byteC:91];
+    b = [self getCodeByteWithSeed:seed
+                         andByteA: bytesForKeyBytes[6]
+                            byteB: bytesForKeyBytes[7]
+                            byteC: bytesForKeyBytes[8]];
     if (kb != b) {
         return result;
     }
@@ -475,7 +487,10 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 #if DD_COMPLEX_CHECK_KEY == 03
     [[NSScanner scannerWithString:[code substringWithRange:NSMakeRange(14, 2)]] scanHexInt:&codeByte];
     kb = (Byte)codeByte;
-    b = [self getCodeByteWithSeed:seed andByteA:7 byteB:1 byteC:100];
+    b = [self getCodeByteWithSeed:seed
+                         andByteA: bytesForKeyBytes[9]
+                            byteB: bytesForKeyBytes[10]
+                            byteC: bytesForKeyBytes[11]];
     if (kb != b) {
         return result;
     }
@@ -492,26 +507,28 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 
     Byte keyBytes[4];
     int i;
+    int bytesForKeyBytes[12] = DD_COMPLEX_CODE_BYTES;
+    
     
     keyBytes[0] = [self getCodeByteWithSeed: seed
-                                   andByteA: 24
-                                      byteB: 3
-                                      byteC: 200];
+                                   andByteA: bytesForKeyBytes[0]
+                                      byteB: bytesForKeyBytes[1]
+                                      byteC: bytesForKeyBytes[2]];
     
     keyBytes[1] = [self getCodeByteWithSeed: seed
-                                   andByteA: 10
-                                      byteB: 0
-                                      byteC: 56];
+                                   andByteA: bytesForKeyBytes[3]
+                                      byteB: bytesForKeyBytes[4]
+                                      byteC: bytesForKeyBytes[5]];
     
     keyBytes[2] = [self getCodeByteWithSeed: seed
-                                   andByteA: 1
-                                      byteB: 2
-                                      byteC: 91];
+                                   andByteA: bytesForKeyBytes[6]
+                                      byteB: bytesForKeyBytes[7]
+                                      byteC: bytesForKeyBytes[8]];
     
     keyBytes[3] = [self getCodeByteWithSeed: seed
-                                   andByteA: 7
-                                      byteB: 1
-                                      byteC: 100];
+                                   andByteA: bytesForKeyBytes[9]
+                                      byteB: bytesForKeyBytes[10]
+                                      byteC: bytesForKeyBytes[11]];
     
     NSMutableString *result = [NSMutableString stringWithFormat:@"%08x", (int)seed];
     

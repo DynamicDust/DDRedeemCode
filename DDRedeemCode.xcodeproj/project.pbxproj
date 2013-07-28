@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0157AEDE17A55140001CF17A /* DDRedeemCodeDocumentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0157AEE117A55140001CF17A /* Build configuration list for PBXAggregateTarget "DDRedeemCodeDocumentation" */;
+			buildPhases = (
+				0157AEE217A55145001CF17A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = DDRedeemCodeDocumentation;
+			productName = DDRedeemCodeDocumentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0184EE3E17A30A5000249D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE3D17A30A5000249D16 /* Foundation.framework */; };
 		0184EE4017A30A5000249D16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184EE3F17A30A5000249D16 /* CoreGraphics.framework */; };
@@ -205,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				0184EE3917A30A5000249D16 /* DDRedeemCode */,
+				0157AEDE17A55140001CF17A /* DDRedeemCodeDocumentation */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +237,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0157AEE217A55145001CF17A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"DynamicDust\";\ncompanyID=\"com.dynamicdust\";\ncompanyURL=\"http://github.io/nickskull/\";\ntarget=\"iphoneos\";\noutputPath=\"${PROJECT_DIR}/documentation\";\n# End constants\n/usr/bin/appledoc                                                       \\\n--project-name \"${PROJECT_NAME}\"                                        \\\n--project-company \"${company}\"                                          \\\n--company-id \"${companyID}\"                                             \\\n--docset-atom-filename \"${company}.atom\"                                \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\"        \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\"  \\\n--docset-fallback-url \"${companyURL}/${company}\"                        \\\n--output \"${outputPath}\"                                                \\\n--publish-docset                                                        \\\n--docset-platform-family \"${target}\"                                    \\\n--logformat xcode                                                       \\\n--keep-intermediate-files                                               \\\n--no-repeat-first-par                                                   \\\n--no-warn-invalid-crossref                                              \\\n--exit-threshold 2                                                      \\\n\"${PROJECT_DIR}\"";
+		};
 		01BD99D417A30AB300F42302 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +291,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0157AEDF17A55140001CF17A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0157AEE017A55140001CF17A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		0184EE6D17A30A5000249D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,6 +414,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0157AEE117A55140001CF17A /* Build configuration list for PBXAggregateTarget "DDRedeemCodeDocumentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0157AEDF17A55140001CF17A /* Debug */,
+				0157AEE017A55140001CF17A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0184EE3517A30A5000249D16 /* Build configuration list for PBXProject "DDRedeemCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -31,12 +31,6 @@
 }
 
 - (void)redeemPressCode {
-   /* DDRedeemCode *pressCode = [DDRedeemCode pressCodeAlertWithCompletionBlock:^(BOOL validCode){
-        NSLog(@"Block works! Code is valid: %@", validCode ? @"YES!" : @"NO!");
-    }];
-    [pressCode showRedeemAlert];
-    */
-    
     [DDRedeemCode showPressCodeAlertWithCompletionBlock:^(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus){
         NSLog(@"Block works! Code is valid: %@. Code type: %s and status: %s.", validCode ? @"YES!" : @"NO!", stringFromDDRedeemCodeType(codeType), stringFromDDRedeemCodeStatus(codeStatus));
     }];

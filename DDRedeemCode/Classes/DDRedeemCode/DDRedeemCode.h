@@ -39,7 +39,7 @@
  */
 #define DD_SIMPLE_LOG_CODES                         0
 
-// Security check
+/* Security check */
 #if DD_SIMPLE_LOG_CODES == 1
     #ifdef NDEBUG
         #error For security purposes, please set DD_SIMPLE_LOG_CODES to 0 before building for Release.
@@ -50,9 +50,25 @@
 // Complex Verification
 //--------------------------------------------------------------
 
+/*
+ *
+ */
 #define DD_COMPLEX_SEED_BLACKLIST                   @[@"123456789", @"987654321"]
 
+/*
+ *
+ *
+ */
 #define DD_COMPLEX_CHECK_KEY                        01
+
+/*
+ *
+ *
+ */
+#define DD_COMPLEX_CODE_BYTES                       {   24,     3,      200,    \
+                                                        10,     0,      56,     \
+                                                        1,      2,      91,     \
+                                                        7,      1,      100     }
 
 //--------------------------------------------------------------
 // Server-Side Based Verification
