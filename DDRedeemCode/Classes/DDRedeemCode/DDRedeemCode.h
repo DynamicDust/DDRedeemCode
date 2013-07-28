@@ -18,7 +18,7 @@
  *              2. DDRedeemCodeSecurityTypeLocalComplex
  *              3. DDRedeemCodeSecurityTypeServerSide
  */
-#define DD_SECURITY_TYPE DDRedeemCodeSecurityTypeLocalComplex
+#define DD_SECURITY_TYPE DDRedeemCodeSecurityTypeLocalSimple
 
 //--------------------------------------------------------------
 // Simple Verification
@@ -37,7 +37,7 @@
 /*
  * @description This will log all valid codes for this application. It will also throw an error if you'll try building Release with this enabled. It will log the codes after you'll press the "Redeem" button on the UIAlertView.
  */
-#define DD_SIMPLE_LOG_CODES                         1
+#define DD_SIMPLE_LOG_CODES                         0
 
 // Security check
 #if DD_SIMPLE_LOG_CODES == 1
@@ -50,11 +50,9 @@
 // Complex Verification
 //--------------------------------------------------------------
 
-#define DD_COMPLEX_SEED
+#define DD_COMPLEX_SEED_BLACKLIST                   @[@"123456789", @"987654321"]
 
-#define DD_COMPLEX_SEED_BLACKLIST                   @[@"123456789", @"", @"", @""]
-
-#define DD_COMPLEX_CHECK_KEY                        01 | 02
+#define DD_COMPLEX_CHECK_KEY                        01 | 03
 
 //--------------------------------------------------------------
 // Server-Side Based Verification

@@ -144,7 +144,9 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     {
         case DDRedeemCodeSecurityTypeLocalSimple:
         {
-            uint32_t redeemCodeInt = [redeemCode intValue];
+            uint32_t redeemCodeInt;
+            redeemCode = [redeemCode stringByReplacingOccurrencesOfString:@"-" withString:@""].lowercaseString;
+            [[NSScanner scannerWithString:redeemCode] scanHexInt:&redeemCodeInt];
             
             // Base data
             NSData *data = [DD_BUNDLE_ID dataUsingEncoding:NSUTF8StringEncoding];
@@ -169,19 +171,40 @@ void CRC32Table(uint32_t *table, uint32_t poly)
             uint32_t masterSeed     = [DD_SIMPLE_MASTER_SECRET intValue];
             
             if (DD_SIMPLE_LOG_CODES == 1) {
-                NSLog(@"Valid code for this hour: %u.", [data CRC32WithSeed:hourSeed]);
-                NSLog(@"Valid code for this day: %u.", [data CRC32WithSeed:daySeed]);
-                NSLog(@"Valid code for this week: %u.", [data CRC32WithSeed:weekSeed]);
-                NSLog(@"Valid code for this month: %u.", [data CRC32WithSeed:monthSeed]);
-                NSLog(@"Valid code for this year: %u.", [data CRC32WithSeed:yearSeed]);
-                NSLog(@"Valid master code: %u.", [data CRC32WithSeed:masterSeed]);
-                NSLog(@"Valid custom codes:");
-                for (NSString *code in DD_SIMPLE_CUSTOM_CODES) {
-                    NSLog(@"%@", code);
-                }
+                NSString *hourCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:hourSeed]] uppercaseString];
+                NSString *hourString = [NSString stringWithFormat:@"Valid code for this hour: %@-%@",
+                                        [hourCodeStr substringWithRange:NSMakeRange(0, 4)], [hourCodeStr substringWithRange:NSMakeRange(4, 4)]];
+                
+                NSString *dayCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:daySeed]] uppercaseString];
+                NSString *dayString = [NSString stringWithFormat:@"Valid code for this day: %@-%@",
+                                        [dayCodeStr substringWithRange:NSMakeRange(0, 4)], [dayCodeStr substringWithRange:NSMakeRange(4, 4)]];
+                
+                NSString *weekCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:weekSeed]] uppercaseString];
+                NSString *weekString = [NSString stringWithFormat:@"Valid code for this week: %@-%@",
+                                        [weekCodeStr substringWithRange:NSMakeRange(0, 4)], [weekCodeStr substringWithRange:NSMakeRange(4, 4)]];
+                
+                NSString *monthCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:monthSeed]] uppercaseString];
+                NSString *monthString = [NSString stringWithFormat:@"Valid code for this month: %@-%@",
+                                        [monthCodeStr substringWithRange:NSMakeRange(0, 4)], [monthCodeStr substringWithRange:NSMakeRange(4, 4)]];
+ 
+                NSString *yearCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:yearSeed]] uppercaseString];
+                NSString *yearString = [NSString stringWithFormat:@"Valid code for this year: %@-%@",
+                                         [yearCodeStr substringWithRange:NSMakeRange(0, 4)], [yearCodeStr substringWithRange:NSMakeRange(4, 4)]];
+                
+                NSString *masterCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:masterSeed]] uppercaseString];
+                NSString *masterString = [NSString stringWithFormat:@"Valid master code: %@-%@",
+                                         [masterCodeStr substringWithRange:NSMakeRange(0, 4)], [masterCodeStr substringWithRange:NSMakeRange(4, 4)]];
+                
+                NSLog(@"%@", hourString);
+                NSLog(@"%@", dayString);
+                NSLog(@"%@", weekString);
+                NSLog(@"%@", monthString);
+                NSLog(@"%@", yearString);
+                NSLog(@"%@", masterString);
+                NSLog(@"Valid custom codes: %@", DD_SIMPLE_CUSTOM_CODES);
             }
             
-            for (int i = 1; i < (DDRedeemCodeTypeSimpleCount + DD_SIMPLE_CUSTOM_CODES_ENABLED); i++) {
+            for (int i = 0; i < (DDRedeemCodeTypeSimpleCount + DD_SIMPLE_CUSTOM_CODES_ENABLED); i++) {
                 switch (i) {
                         
                         // 1. Check hour-valid code
@@ -515,9 +538,16 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     
     redeemView.alertViewStyle = UIAlertViewStylePlainTextInput;
     redeemView.delegate = self;
-    if (DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalComplex) {
+    
+    if (DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalSimple) {
         [redeemView textFieldAtIndex:0].delegate = self;
+        [redeemView textFieldAtIndex:0].placeholder = @"abcd-1234";
+        [redeemView textFieldAtIndex:0].autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
+    } else if (DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalComplex) {
+        [redeemView textFieldAtIndex:0].delegate = self;
+        [redeemView textFieldAtIndex:0].placeholder = @"1234-abcd-1234-abcd-1234";
     }
+    
     [redeemView show];
 }
 
@@ -536,6 +566,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
         self.completionBlock(isCodeValid, _codeType, _codeStatus);
     }
     alertView.delegate = nil;
+    [alertView textFieldAtIndex:0].delegate = nil;
     AntiARCRelease(self);
 }
 
@@ -544,10 +575,21 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 //--------------------------------------------------------------
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (textField.text.length < 4) return YES;
-    if ([textField.text stringByReplacingOccurrencesOfString:@"-" withString:@""].length == 20) return NO;
-    if  ([[textField.text substringWithRange:NSMakeRange(textField.text.length-4, 4)] rangeOfString:@"-"].location == NSNotFound) {
-        textField.text = [textField.text stringByAppendingFormat:@"-"];
+    if (strcmp([string UTF8String], "\b") == -8) return YES;
+    
+    if (DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalSimple) {
+
+        if (textField.text.length < 4) return YES;
+        else if ([textField.text stringByReplacingOccurrencesOfString:@"-" withString:@""].length == 8) return NO;
+        else if ([[textField.text substringWithRange:NSMakeRange(textField.text.length-4, 4)] rangeOfString:@"-"].location == NSNotFound) {
+            textField.text = [textField.text stringByAppendingFormat:@"-"];
+        }
+    } else if (DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalComplex) {
+        if (textField.text.length < 4) return YES;
+        else if ([textField.text stringByReplacingOccurrencesOfString:@"-" withString:@""].length == 20) return NO;
+        else if ([[textField.text substringWithRange:NSMakeRange(textField.text.length-4, 4)] rangeOfString:@"-"].location == NSNotFound) {
+            textField.text = [textField.text stringByAppendingFormat:@"-"];
+        }
     }
     
     return YES;

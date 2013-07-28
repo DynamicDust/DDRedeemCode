@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "347"
-         endingLineNumber = "347"
+         startingLineNumber = "370"
+         endingLineNumber = "370"
          landmarkName = "-getCodeByteWithSeed:andByteA:byteB:byteC:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "363"
-         endingLineNumber = "363"
+         startingLineNumber = "386"
+         endingLineNumber = "386"
          landmarkName = "-getCodeChecksum:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "464"
-         endingLineNumber = "464"
+         startingLineNumber = "487"
+         endingLineNumber = "487"
          landmarkName = "-makeRedeemCodeWithSeed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "489"
-         endingLineNumber = "489"
+         startingLineNumber = "512"
+         endingLineNumber = "512"
          landmarkName = "-makeRedeemCodeWithSeed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "384"
-         endingLineNumber = "384"
+         startingLineNumber = "407"
+         endingLineNumber = "407"
          landmarkName = "-getCodeChecksum:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "391"
-         endingLineNumber = "391"
+         startingLineNumber = "414"
+         endingLineNumber = "414"
          landmarkName = "-checkCodeChecksum:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396701148.392158"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "546"
-         endingLineNumber = "546"
+         startingLineNumber = "577"
+         endingLineNumber = "577"
          landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,12 +125,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
-         timestampString = "396698980.957671"
+         timestampString = "396700993.161807"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "405"
-         endingLineNumber = "405"
+         startingLineNumber = "428"
+         endingLineNumber = "428"
          landmarkName = "-checkCode:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DDRedeemCode/Classes/DDRedeemCode/DDRedeemCode.m"
+         timestampString = "396700202.569316"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
+         landmarkName = "-isRedeemCodeValid:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
