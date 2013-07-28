@@ -11,32 +11,60 @@
 //--------------------------------------------------------------
 
 /*
- * @description This is used to set a security level of the redeem code verification. The options are DDRedeemCodeSecurityTypeLocalSimple, DDRedeemCodeSecurityTypeLocalComplex and DDRedeemCodeSecurityTypeLocalSimple. If you've chosen the DDRedeemCodeSecurityTypeServerSide, then also edit the DD_SERVER_ macros for your server.
+ * @description This is used to set a security level of the redeem code verification. The options are specified below. 
+ *              If you've chosen the DDRedeemCodeSecurityTypeServerSide, then also edit the DD_SERVER_ macros for your server.
+ *
+ * @options     1. DDRedeemCodeSecurityTypeLocalSimple
+ *              2. DDRedeemCodeSecurityTypeLocalComplex
+ *              3. DDRedeemCodeSecurityTypeServerSide
  */
-#define DD_SECURITY_TYPE DDRedeemCodeSecurityTypeLocalSimple
+#define DD_SECURITY_TYPE DDRedeemCodeSecurityTypeLocalComplex
 
+//--------------------------------------------------------------
+// Simple Verification
+//--------------------------------------------------------------
 /*
  * @description This is the master secret which is used for redeem code generation. You have to change it to something secure. I suggest and md5 of a file, or use some password generator.
  */
-#define DD_MASTER_SECRET @"supersecret"
+#define DD_SIMPLE_MASTER_SECRET                     @"04564564842ab8486c46"
 
 /*
  * @description Set this macro to 1 if you want to provide your own codes, that will be valid forever. Then insert the codes into the array macro beneath, each as a string delimited with a colon. Ideally, the code should be 10 characters long and should contain both upper and lowercase letters and numbers.
  */
-#define DD_CUSTOM_CODES_ENABLED 0
-#define DD_CUSTOM_CODES @[@"abcd", @"efgh"]
+#define DD_SIMPLE_CUSTOM_CODES_ENABLED              0
+#define DD_SIMPLE_CUSTOM_CODES                      @[@"abcd", @"efgh"]
 
 /*
  * @description This will log all valid codes for this application. It will also throw an error if you'll try building Release with this enabled. It will log the codes after you'll press the "Redeem" button on the UIAlertView.
  */
-#define DD_LOG_CODES 0
+#define DD_SIMPLE_LOG_CODES                         1
 
 // Security check
-#if DD_LOG_CODES == 1
+#if DD_SIMPLE_LOG_CODES == 1
     #ifdef NDEBUG
-        #error For security purposes, please set DD_LOG_CODES to 0 before building for Release.
+        #error For security purposes, please set DD_SIMPLE_LOG_CODES to 0 before building for Release.
     #endif
 #endif
+
+//--------------------------------------------------------------
+// Complex Verification
+//--------------------------------------------------------------
+
+#define DD_COMPLEX_SEED
+
+#define DD_COMPLEX_SEED_BLACKLIST                   @[@"123456789", @"", @"", @""]
+
+#define DD_COMPLEX_CHECK_KEY                        01 | 02
+
+//--------------------------------------------------------------
+// Server-Side Based Verification
+//--------------------------------------------------------------
+
+
+
+
+
+
 
 
 //--------------------------------------------------------------
@@ -82,20 +110,21 @@ static inline const char *stringFromDDRedeemCodeSecurityType(DDRedeemCodeSecurit
  * @description This enum is used to check the code type.
  */
 typedef enum {
-    DDRedeemCodeTypeHourly,
-    DDRedeemCodeTypeDaily,
-    DDRedeemCodeTypeWeekly,
-    DDRedeemCodeTypeMonthly,
-    DDRedeemCodeTypeYearly,
-    DDRedeemCodeTypeMaster,
-    DDRedeemCodeTypeCount,
-    DDRedeemCodeTypeCustom,
-    DDRedeemCodeTypeNone
+    DDRedeemCodeTypeSimpleHourly,
+    DDRedeemCodeTypeSimpleDaily,
+    DDRedeemCodeTypeSimpleWeekly,
+    DDRedeemCodeTypeSimpleMonthly,
+    DDRedeemCodeTypeSimpleYearly,
+    DDRedeemCodeTypeSimpleMaster,
+    DDRedeemCodeTypeSimpleCount,
+    DDRedeemCodeTypeSimpleCustom,
+    DDRedeemCodeTypeNone,
+    DDRedeemCodeTypeComplex
 } DDRedeemCodeType;
 
 static inline const char *stringFromDDRedeemCodeType(DDRedeemCodeType codeType)
 {
-    static const char *strings[] = {"DDRedeemCodeTypeHourly", "DDRedeemCodeTypeDaily", "DDRedeemCodeTypeWeekly", "DDRedeemCodeTypeMonthly", "DDRedeemCodeTypeYearly", "DDRedeemCodeTypeMaster", "6", "DDRedeemCodeTypeCustom", "DDRedeemCodeTypeNone"};
+    static const char *strings[] = {"DDRedeemCodeTypeSimpleHourly", "DDRedeemCodeTypeSimpleDaily", "DDRedeemCodeTypeSimpleWeekly", "DDRedeemCodeTypeSimpleMonthly", "DDRedeemCodeTypeSimpleYearly", "DDRedeemCodeTypeSimpleMaster", "6", "DDRedeemCodeTypeSimpleCustom", "DDRedeemCodeTypeNone", "DDRedeemCodeTypeComplex"};
     return strings[codeType];
 }
 
@@ -119,22 +148,22 @@ static inline const char *stringFromDDRedeemCodeStatus(DDRedeemCodeStatus codeSt
 #pragma mark - DDRedeemCode -
 //--------------------------------------------------------------
 
-@interface DDRedeemCode : NSObject <UIAlertViewDelegate>
+@interface DDRedeemCode : NSObject <UIAlertViewDelegate, UITextFieldDelegate>
 
 /*
  * @description This block will be executed after the code has been checked.
  *
  */
-@property (nonatomic, assign) void (^completionBlock)(BOOL validCode, DDRedeemCodeType codeType);
+@property (nonatomic, assign) void (^completionBlock)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus);
 
-+ (void)showPressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType))completionBlock;
-+ (instancetype)pressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType))completionBlock;
++ (void)showPressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus))completionBlock;
++ (instancetype)pressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus))completionBlock;
 
 /*
  * @description
  * @returns A DDRedeemCode instance with completionBlock property set.
  */
-- (instancetype)initWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType))completionBlock;
+- (instancetype)initWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus))completionBlock;
 
 /*
  * @description Shows UIAlertView, which contains an UITextView for redeem code enter.
