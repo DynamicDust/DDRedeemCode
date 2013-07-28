@@ -1,77 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="BlocksKit : The Objective-C block utilities you always wish you had." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>DDRedeemCode by nickskull</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>BlocksKit</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/nickskull/DDRedeemCode">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/nickskull/DDRedeemCode/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/nickskull/DDRedeemCode/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pandamonia/BlocksKit">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">BlocksKit</h1>
-          <h2 id="project_tagline">The Objective-C block utilities you always wish you had.</h2>
+      <section>
+        <div id="title">
+          <h1>DDRedeemCode</h1>
+          <p>No redeem codes for In-App Purchases? Not anymore.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/nickskull">nickskull</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pandamonia/BlocksKit/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pandamonia/BlocksKit/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1><a href="http://pandamonia.github.com/BlocksKit">BlocksKit</a></h1>
-
-<p>Blocks in C and Objective-C are downright magical.  They make coding easier and potentially quicker, not to mention faster on the front end with multithreading and Grand Central Dispatch.  BlocksKit hopes to facilitate this kind of programming by removing some of the annoying - and, in some cases, impeding - limits on coding with blocks.</p>
+        <p>BlocksKit
+Blocks in C and Objective-C are downright magical. They make coding easier and potentially quicker, not to mention faster on the front end with multithreading and Grand Central Dispatch. BlocksKit hopes to facilitate this kind of programming by removing some of the annoying - and, in some cases, impeding - limits on coding with blocks.</p>
 
 <p>BlocksKit is a framework for OS X Lion and newer and a static library for iOS 5 and newer.</p>
 
-<h1>Installation</h1>
+<p>Installation
+BlocksKit can be added to a project using CocoaPods. We also distribute a static library build.</p>
 
+<p>Library
+Download a release of BlocksKit.
+Move libBlocksKit.a and Headers to your project's folder, preferably a subfolder like "Vendor".
+In "Build Phases", Drag libBlocksKit.a into your target's "Link Binary With Libraries" build phase.
+In the build settings of your target or project, change "Other Linker Flags" to -ObjC -all_load. Make sure your app is linked with CoreGraphics, Foundation, MessageUI, and UIKit.
+Change (or add) to "Header Search Paths" the relative path to BlocksKit's headers, like $(SRCROOT)/Vendor/Headers.
+Insert #import ` in your project's prefix header.
+Documentation
+An Xcode 4 compatible documentation set is available using this Atom link. You may also view the documentation online.</p>
 
-<h3>Library</h3>
+<p>License
+BlocksKit is created and maintained by Pandamonia LLC under the MIT license. The project itself is free for use in any and all projects. You can use BlocksKit in any project, public or private, with or without attribution - though we prefer attribution! It helps us.</p>
 
-<ul>
-<li>Download a release of BlocksKit.</li>
-<li>Move libBlocksKit.a and Headers to your project's folder, preferably a subfolder like "Vendor".</li>
-<li>In "Build Phases", Drag libBlocksKit.a into your target's "Link Binary With Libraries" build phase. </li>
-<li>In the build settings of your target or project, change "Other Linker Flags" to <code>-ObjC -all_load</code>. Make sure your app is linked with CoreGraphics, Foundation, MessageUI, and UIKit.</li>
-<li>Change (or add) to "Header Search Paths" the relative path to BlocksKit's headers, like <code>$(SRCROOT)/Vendor/Headers</code>.</li>
-<li>Insert <code>#import &lt;BlocksKit/BlocksKit.h&gt;</code>` in your project's prefix header.</li>
-</ul><h1>Documentation</h1>
-
-<p>An Xcode 4 compatible documentation set is available <a href="http://nickskull.github.com/DDRedeemCode/com.dynamicdust.DDRedeemCode.atom">using this Atom link</a>. You may also view the documentation <a href="http://nickskull.github.com/DDRedeemCode/Documentation">online</a>.</p>
-
-<h1>License</h1>
-
-<p>BlocksKit is created and maintained by <a href="https://github.com/nickskull">Pandamonia LLC</a> under the MIT license.  <strong>The project itself is free for use in any and all projects.</strong>  You can use BlocksKit in any project, public or private, with or without attribution - though we prefer attribution! It helps us.</p>
-
-<p>Unsure about your rights?  <a href="http://nickskull.github.com/DDRedeemCode/index.html#license">Read more.</a></p>
+<p>Unsure about your rights? Read more.</p>
 
 <p>Individual credits for included code exist in the header files and documentation. We thank them for their contributions to the open source community.</p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">BlocksKit maintained by <a href="https://github.com/pandamonia">pandamonia</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
