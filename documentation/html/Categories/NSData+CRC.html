@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSData(CRC) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DDRedeemCode </a></h1>
+				<a id="developerHome" href="../index.html">DynamicDust</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSData(CRC) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/calculateCRC32">&nbsp;&nbsp;&nbsp;&nbsp;- calculateCRC32</option>
+	
+	<option value="//api/name/calculateCRC32WithPoly:">&nbsp;&nbsp;&nbsp;&nbsp;- calculateCRC32WithPoly:</option>
+	
+	<option value="//api/name/calculateCRC32WithSeed:">&nbsp;&nbsp;&nbsp;&nbsp;- calculateCRC32WithSeed:</option>
+	
+	<option value="//api/name/calculateCRC32WithSeed:andPoly:">&nbsp;&nbsp;&nbsp;&nbsp;- calculateCRC32WithSeed:andPoly:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calculateCRC32">calculateCRC32</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calculateCRC32WithPoly:">calculateCRC32WithPoly:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calculateCRC32WithSeed:">calculateCRC32WithSeed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calculateCRC32WithSeed:andPoly:">calculateCRC32WithSeed:andPoly:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSData(CRC) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSData(CRC) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DDRedeemCode.h<br />DDRedeemCode.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The NSData class category, which adds <code>CRC32</code> support for checking codes. It is used in the most simplest code verification.</p>
+
+<ul>
+<li>Cons of this approach are that the <code>CRC32</code> is not very secure and doesn&rsquo;t have perfect accuracy.</li>
+<li>Pros, that it produces a short 10 characters long decimal or 8 characters long hexadecimal string, that is very easy to enter.</li>
+</ul>
+<div class="bug"><p><strong>Bug:</strong> Implement something more secure than <code>CRC32</code> for complex security.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/calculateCRC32">&ndash;&nbsp;calculateCRC32</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/calculateCRC32WithSeed:">&ndash;&nbsp;calculateCRC32WithSeed:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/calculateCRC32WithPoly:">&ndash;&nbsp;calculateCRC32WithPoly:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/calculateCRC32WithSeed:andPoly:">&ndash;&nbsp;calculateCRC32WithSeed:andPoly:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/calculateCRC32" title="calculateCRC32"></a>
+	<h3 class="subsubtitle method-title">calculateCRC32</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the CRC32 with default seed and polynomial values.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (uint32_t)calculateCRC32</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default values are:
+- <code>0xFFFFFFFFL</code> for seed
+- <code>0xEDB88320L</code> for seed</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DDRedeemCode.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/calculateCRC32WithPoly:" title="calculateCRC32WithPoly:"></a>
+	<h3 class="subsubtitle method-title">calculateCRC32WithPoly:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the CRC32 using specified polynomial, but with default seed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (uint32_t)calculateCRC32WithPoly:(uint32_t)<em>poly</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>poly</em></dt>
+			<dd><p>This polynomial will be used while calculating the CRC32.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default value of the seed is <code>0xFFFFFFFFL</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DDRedeemCode.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/calculateCRC32WithSeed:" title="calculateCRC32WithSeed:"></a>
+	<h3 class="subsubtitle method-title">calculateCRC32WithSeed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the CRC32 based on the seed, but with default polynomial.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (uint32_t)calculateCRC32WithSeed:(uint32_t)<em>seed</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seed</em></dt>
+			<dd><p>This seed will be used to generate the CRC32. It is an <code>uint32_t</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default value of the polynomial is <code>0xEDB88320L</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DDRedeemCode.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/calculateCRC32WithSeed:andPoly:" title="calculateCRC32WithSeed:andPoly:"></a>
+	<h3 class="subsubtitle method-title">calculateCRC32WithSeed:andPoly:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculate the CRC32 based on the specified seed and using the specified polynomial.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (uint32_t)calculateCRC32WithSeed:(uint32_t)<em>seed</em> andPoly:(uint32_t)<em>poly</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seed</em></dt>
+			<dd><p>This seed will be used to generate the CRC32.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>poly</em></dt>
+			<dd><p>This polynomial will be used while calculating the CRC32.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DDRedeemCode.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 DynamicDust. All rights reserved. (Last updated: 2013-07-29)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

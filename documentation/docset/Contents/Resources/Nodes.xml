@@ -7,6 +7,24 @@
 			<Subnodes>
                 
 				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Categories</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="2"/>
+						
+					</Subnodes>
+				</Node>
 				
 				
 			</Subnodes>
@@ -14,7 +32,15 @@
     </TOC>
 	<Library>
 		
+		<Node id="1">
+			<Name>DDRedeemCode</Name>
+			<Path>Classes/DDRedeemCode.html</Path>
+		</Node>
 		
+		<Node id="2">
+			<Name>NSData(CRC)</Name>
+			<Path>Categories/NSData+CRC.html</Path>
+		</Node>
 		
 		
 	</Library>

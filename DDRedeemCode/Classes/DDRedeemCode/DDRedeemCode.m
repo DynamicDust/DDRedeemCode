@@ -61,22 +61,22 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     }
 }
 
--(uint32_t)CRC32
+-(uint32_t)calculateCRC32
 {
-    return [self CRC32WithSeed:defSeed andPoly:defPoly];
+    return [self calculateCRC32WithSeed:defSeed andPoly:defPoly];
 }
 
--(uint32_t)CRC32WithSeed:(uint32_t)seed
+-(uint32_t)calculateCRC32WithSeed:(uint32_t)seed
 {
-    return [self CRC32WithSeed:seed andPoly:defPoly];
+    return [self calculateCRC32WithSeed:seed andPoly:defPoly];
 }
 
--(uint32_t)CRC32WithPoly:(uint32_t)poly
+-(uint32_t)calculateCRC32WithPoly:(uint32_t)poly
 {
-    return [self CRC32WithSeed:defSeed andPoly:poly];
+    return [self calculateCRC32WithSeed:defSeed andPoly:poly];
 }
 
--(uint32_t)CRC32WithSeed:(uint32_t)seed andPoly:(uint32_t)poly
+-(uint32_t)calculateCRC32WithSeed:(uint32_t)seed andPoly:(uint32_t)poly
 {
     uint32_t *table = malloc(sizeof(uint32_t) * 256);
     CRC32Table(table, poly);
@@ -173,27 +173,27 @@ void CRC32Table(uint32_t *table, uint32_t poly)
             uint32_t masterSeed     = [DD_SIMPLE_MASTER_SECRET intValue];
             
             if (DD_SIMPLE_LOG_CODES == 1) {
-                NSString *hourCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:hourSeed]] uppercaseString];
+                NSString *hourCodeStr = [[NSString stringWithFormat:@"%08x", [data calculateCRC32WithSeed:hourSeed]] uppercaseString];
                 NSString *hourString = [NSString stringWithFormat:@"Valid code for this hour: %@-%@",
                                         [hourCodeStr substringWithRange:NSMakeRange(0, 4)], [hourCodeStr substringWithRange:NSMakeRange(4, 4)]];
                 
-                NSString *dayCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:daySeed]] uppercaseString];
+                NSString *dayCodeStr = [[NSString stringWithFormat:@"%08x", [data calculateCRC32WithSeed:daySeed]] uppercaseString];
                 NSString *dayString = [NSString stringWithFormat:@"Valid code for this day: %@-%@",
                                         [dayCodeStr substringWithRange:NSMakeRange(0, 4)], [dayCodeStr substringWithRange:NSMakeRange(4, 4)]];
                 
-                NSString *weekCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:weekSeed]] uppercaseString];
+                NSString *weekCodeStr = [[NSString stringWithFormat:@"%08x", [data calculateCRC32WithSeed:weekSeed]] uppercaseString];
                 NSString *weekString = [NSString stringWithFormat:@"Valid code for this week: %@-%@",
                                         [weekCodeStr substringWithRange:NSMakeRange(0, 4)], [weekCodeStr substringWithRange:NSMakeRange(4, 4)]];
                 
-                NSString *monthCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:monthSeed]] uppercaseString];
+                NSString *monthCodeStr = [[NSString stringWithFormat:@"%08x", [data calculateCRC32WithSeed:monthSeed]] uppercaseString];
                 NSString *monthString = [NSString stringWithFormat:@"Valid code for this month: %@-%@",
                                         [monthCodeStr substringWithRange:NSMakeRange(0, 4)], [monthCodeStr substringWithRange:NSMakeRange(4, 4)]];
  
-                NSString *yearCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:yearSeed]] uppercaseString];
+                NSString *yearCodeStr = [[NSString stringWithFormat:@"%08x", [data calculateCRC32WithSeed:yearSeed]] uppercaseString];
                 NSString *yearString = [NSString stringWithFormat:@"Valid code for this year: %@-%@",
                                          [yearCodeStr substringWithRange:NSMakeRange(0, 4)], [yearCodeStr substringWithRange:NSMakeRange(4, 4)]];
                 
-                NSString *masterCodeStr = [[NSString stringWithFormat:@"%08x", [data CRC32WithSeed:masterSeed]] uppercaseString];
+                NSString *masterCodeStr = [[NSString stringWithFormat:@"%08x", [data calculateCRC32WithSeed:masterSeed]] uppercaseString];
                 NSString *masterString = [NSString stringWithFormat:@"Valid master code: %@-%@",
                                          [masterCodeStr substringWithRange:NSMakeRange(0, 4)], [masterCodeStr substringWithRange:NSMakeRange(4, 4)]];
                 
@@ -211,7 +211,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                         
                         // 1. Check hour-valid code
                     case DDRedeemCodeTypeSimpleHourly:
-                        if (redeemCodeInt == [data CRC32WithSeed:hourSeed]) {
+                        if (redeemCodeInt == [data calculateCRC32WithSeed:hourSeed]) {
                             if (DD_LOGGING == 1)
                                 NSLog(@"Valid key for date (d/m/y): %i. %i. %i %i:00 -> %i:00.",
                                       DD_CURRENT_TIME.day, DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year, DD_CURRENT_TIME.hour, DD_CURRENT_TIME.hour+1);
@@ -225,7 +225,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                         
                         // 2. Check day-valid code
                     case DDRedeemCodeTypeSimpleDaily:
-                        if (redeemCodeInt == [data CRC32WithSeed:daySeed]) {
+                        if (redeemCodeInt == [data calculateCRC32WithSeed:daySeed]) {
                             if (DD_LOGGING == 1)
                                 NSLog(@"Valid key for date (d/m/y): %i. %i. %i 00:00 -> %i. %i. %i 00:00.",
                                       DD_CURRENT_TIME.day, DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year, DD_CURRENT_TIME.day+1, DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year);
@@ -239,7 +239,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                         
                         // 3. Check week-valid code
                     case DDRedeemCodeTypeSimpleWeekly:
-                        if (redeemCodeInt == [data CRC32WithSeed:weekSeed]) {
+                        if (redeemCodeInt == [data calculateCRC32WithSeed:weekSeed]) {
                             if (DD_LOGGING == 1)
                                 NSLog(@"Valid key for week number: %i of year: %i.",
                                       (int)DD_CURRENT_TIME_WEEK, (int)DD_CURRENT_TIME.year);
@@ -253,7 +253,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                         
                         // 4. Check month-valid code
                     case DDRedeemCodeTypeSimpleMonthly:
-                        if (redeemCodeInt == [data CRC32WithSeed:monthSeed]) {
+                        if (redeemCodeInt == [data calculateCRC32WithSeed:monthSeed]) {
                             if (DD_LOGGING == 1)
                                 NSLog(@"Valid key for date (m/y): %i. %i -> %i. %i.",
                                       DD_CURRENT_TIME.month, (int)DD_CURRENT_TIME.year, DD_CURRENT_TIME.month+1, (int)DD_CURRENT_TIME.year);
@@ -267,7 +267,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                         
                         // 5. Check year-valid code
                     case DDRedeemCodeTypeSimpleYearly:
-                        if (redeemCodeInt == [data CRC32WithSeed:yearSeed]) {
+                        if (redeemCodeInt == [data calculateCRC32WithSeed:yearSeed]) {
                             if (DD_LOGGING == 1)
                                 NSLog(@"Valid key for date (y): %i -> %i.",
                                       (int)DD_CURRENT_TIME.year, (int)DD_CURRENT_TIME.year+1);
@@ -281,7 +281,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
                         
                         // 5. Check master code
                     case DDRedeemCodeTypeSimpleMaster:
-                        if (redeemCodeInt == [data CRC32WithSeed:masterSeed]) {
+                        if (redeemCodeInt == [data calculateCRC32WithSeed:masterSeed]) {
                             if (DD_LOGGING == 1)
                                 NSLog(@"Valid key forever, or until you change the master secret (%@).",
                                       DD_SIMPLE_MASTER_SECRET);

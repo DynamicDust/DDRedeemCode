@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSData+CRC.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSData(CRC)</TokenIdentifier>
+			<Abstract type="html">The NSData class category, which adds CRC32 support for checking codes. It is used in the most simplest code verification.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/calculateCRC32</TokenIdentifier>
+			<Abstract type="html">Calculates the CRC32 with default seed and polynomial values.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (uint32_t)calculateCRC32</Declaration>
+			
+			
+			<Anchor>//api/name/calculateCRC32</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/calculateCRC32WithSeed:</TokenIdentifier>
+			<Abstract type="html">Calculates the CRC32 based on the seed, but with default polynomial.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (uint32_t)calculateCRC32WithSeed:(uint32_t)seed</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seed</Name>
+					<Abstract type="html">This seed will be used to generate the CRC32. It is an uint32_t.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/calculateCRC32WithSeed:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/calculateCRC32WithPoly:</TokenIdentifier>
+			<Abstract type="html">Calculates the CRC32 using specified polynomial, but with default seed.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (uint32_t)calculateCRC32WithPoly:(uint32_t)poly</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>poly</Name>
+					<Abstract type="html">This polynomial will be used while calculating the CRC32.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/calculateCRC32WithPoly:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/calculateCRC32WithSeed:andPoly:</TokenIdentifier>
+			<Abstract type="html">Calculate the CRC32 based on the specified seed and using the specified polynomial.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (uint32_t)calculateCRC32WithSeed:(uint32_t)seed andPoly:(uint32_t)poly</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seed</Name>
+					<Abstract type="html">This seed will be used to generate the CRC32.</Abstract>
+				</Parameter><Parameter>
+					<Name>poly</Name>
+					<Abstract type="html">This polynomial will be used while calculating the CRC32.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/calculateCRC32WithSeed:andPoly:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+	</File>
+</Tokens>

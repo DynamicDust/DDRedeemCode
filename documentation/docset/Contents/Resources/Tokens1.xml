@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DDRedeemCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DDRedeemCode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/setCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">@description This block will be executed after the code has been checked.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ) completionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/completionBlock</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/completionBlock</TokenIdentifier>
+			<Abstract type="html">@description This block will be executed after the code has been checked.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ) completionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/completionBlock</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DDRedeemCode/completionBlock</TokenIdentifier>
+			<Abstract type="html">@description This block will be executed after the code has been checked.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ) completionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/completionBlock</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DDRedeemCode/showPressCodeAlertWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>+ (void)showPressCodeAlertWithCompletionBlock:(void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ))completionBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showPressCodeAlertWithCompletionBlock:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DDRedeemCode/pressCodeAlertWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)pressCodeAlertWithCompletionBlock:(void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ))completionBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of DDRedeemCode with completionBlock property set.</Abstract></ReturnValue>
+			<Anchor>//api/name/pressCodeAlertWithCompletionBlock:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/initWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">Designated initalizer</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithCompletionBlock:(void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ))completionBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A DDRedeemCode instance with completionBlock property set.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCompletionBlock:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/showRedeemAlert</TokenIdentifier>
+			<Abstract type="html">Shows UIAlertView, which contains an UITextView for redeem code enter.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (void)showRedeemAlert</Declaration>
+			
+			
+			<Anchor>//api/name/showRedeemAlert</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/isRedeemCodeValid:</TokenIdentifier>
+			<Abstract type="html">Check if a code is valid. If DEBUG flag is set, then also prints out the information about code validity.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isRedeemCodeValid:(NSString *)redeemCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>redeemCode</Name>
+					<Abstract type="html">The redeem code you want to validate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BOOL</Abstract></ReturnValue>
+			<Anchor>//api/name/isRedeemCodeValid:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/redeemProvidedCode:</TokenIdentifier>
+			<Abstract type="html">This method redeems the provided code on the server and returns back the answer.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)redeemProvidedCode:(NSString *)redeemCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>redeemCode</Name>
+					<Abstract type="html">The redeem code you want to redeem.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/redeemProvidedCode:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/DDRedeemCodeSecurityType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/DDRedeemCodeSecurityType</TokenIdentifier>
+			<Abstract type="html">Levels of security/validation.
+- A. Local Verification
+- 1. Simple uses CRC32 and has much shorter numeric codes.
+- 2. Complex uses partial serial number verification and has 12-character alpha-numeric keys.
+- B. Server Side Verification
+- Verifies the redeem code against a specified remote server.</Abstract>
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

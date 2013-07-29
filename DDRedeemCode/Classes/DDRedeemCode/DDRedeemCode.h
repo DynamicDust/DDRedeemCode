@@ -10,7 +10,7 @@
 #pragma mark Setup -
 //--------------------------------------------------------------
 
-/*
+/**
  * @description This is used to set a security level of the redeem code verification. The options are specified below. 
  *              If you've chosen the DDRedeemCodeSecurityTypeServerSide, then also edit the DD_SERVER_ macros for your server.
  *
@@ -80,39 +80,74 @@
 
 
 
+#ifndef NS_ENUM
+#define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
+#endif
 
 //--------------------------------------------------------------
 #pragma mark - NSData Category (CRC) -
 //--------------------------------------------------------------
 
-/*
- * @description NSData class category, which adds CRC32 support for checking codes.
- * @todo Implement something more secure than CRC32 for complex security.
+
+/** 
+ The NSData class category, which adds `CRC32` support for checking codes. It is used in the most simplest code verification.
+ 
+ - Cons of this approach are that the `CRC32` is not very secure and doesn't have perfect accuracy.  
+ - Pros, that it produces a short 10 characters long decimal or 8 characters long hexadecimal string, that is very easy to enter.
+ @bug Implement something more secure than `CRC32` for complex security.
  */
 @interface NSData (CRC)
--(uint32_t) CRC32;
--(uint32_t) CRC32WithSeed:(uint32_t)seed;
--(uint32_t) CRC32WithPoly:(uint32_t)poly;
--(uint32_t) CRC32WithSeed:(uint32_t)seed andPoly:(uint32_t)poly;
+/**
+ Calculates the CRC32 with default seed and polynomial values.
+ 
+ The default values are:
+ - `0xFFFFFFFFL` for seed
+ - `0xEDB88320L` for seed
+ */
+-(uint32_t) calculateCRC32;
+/**
+ Calculates the CRC32 based on the seed, but with default polynomial.
+ 
+ The default value of the polynomial is `0xEDB88320L`.
+ @param seed This seed will be used to generate the CRC32. It is an `uint32_t`.
+ */
+-(uint32_t) calculateCRC32WithSeed:(uint32_t)seed;
+/**
+ Calculates the CRC32 using specified polynomial, but with default seed.
+ 
+ The default value of the seed is `0xFFFFFFFFL`.
+ @param poly This polynomial will be used while calculating the CRC32. 
+ */
+-(uint32_t) calculateCRC32WithPoly:(uint32_t)poly;
+
+/**
+ Calculate the CRC32 based on the specified seed and using the specified polynomial.
+ @param seed This seed will be used to generate the CRC32.
+ @param poly This polynomial will be used while calculating the CRC32.
+ */
+-(uint32_t) calculateCRC32WithSeed:(uint32_t)seed andPoly:(uint32_t)poly;
 @end
 
 //--------------------------------------------------------------
 #pragma mark - Redeem Code Enums
 //--------------------------------------------------------------
 
-/*
- * @description Levels of security/validation.
- *              A. Local Verification
- *                  1. Simple uses CRC32 and has much shorter numeric codes.
- *                  2. Complex uses partial serial number verification and has 12-character alpha-numeric keys.
- *              B. Server Side Verification
- *                  Verifies the redeem code against a specified remote server.
+/**
+ * Levels of security/validation.
+ * - A. Local Verification
+ *    - 1. Simple uses CRC32 and has much shorter numeric codes.
+ *    - 2. Complex uses partial serial number verification and has 12-character alpha-numeric keys.
+ * - B. Server Side Verification
+ *    - Verifies the redeem code against a specified remote server.
  */
-typedef enum {
+typedef NS_ENUM(NSUInteger, DDRedeemCodeSecurityType) {
+    /** Basic security type using CRC32 to check codes. */
     DDRedeemCodeSecurityTypeLocalSimple,
+    /** Complex security type using partial code verification to check code. */
     DDRedeemCodeSecurityTypeLocalComplex,
+    /** This type checks the code against a specified server. */
     DDRedeemCodeSecurityTypeServerSide
-} DDRedeemCodeSecurityType;
+};
 
 static inline const char *stringFromDDRedeemCodeSecurityType(DDRedeemCodeSecurityType secType)
 {
@@ -120,21 +155,31 @@ static inline const char *stringFromDDRedeemCodeSecurityType(DDRedeemCodeSecurit
     return strings[secType];
 }
 
-/*
- * @description This enum is used to check the code type.
+/**
+ This enum is used to check the code type.
  */
-typedef enum {
+typedef NS_ENUM(NSUInteger, DDRedeemCodeType) {
+    /** */
     DDRedeemCodeTypeSimpleHourly,
+    /** */
     DDRedeemCodeTypeSimpleDaily,
+    /** */
     DDRedeemCodeTypeSimpleWeekly,
+    /** */
     DDRedeemCodeTypeSimpleMonthly,
+    /** */
     DDRedeemCodeTypeSimpleYearly,
+    /** */
     DDRedeemCodeTypeSimpleMaster,
+    /** */
     DDRedeemCodeTypeSimpleCount,
+    /** */
     DDRedeemCodeTypeSimpleCustom,
+    /** */
     DDRedeemCodeTypeNone,
+    /** */    
     DDRedeemCodeTypeComplex
-} DDRedeemCodeType;
+};
 
 static inline const char *stringFromDDRedeemCodeType(DDRedeemCodeType codeType)
 {
@@ -142,15 +187,19 @@ static inline const char *stringFromDDRedeemCodeType(DDRedeemCodeType codeType)
     return strings[codeType];
 }
 
-/*
- * @description This enum is used to set a status of a code. Mainly useful for server-side validation and partial serial number verification.
+/**
+ This enum is used to set a status of a code. Mainly useful for server-side validation and partial serial number verification.
  */
-typedef enum {
+typedef NS_ENUM(NSUInteger, DDRedeemCodeStatus) {
+    /** */
     DDRedeemCodeStatusValid,
+    /** */
     DDRedeemCodeStatusInvalid,
+    /** */
     DDRedeemCodeStatusBlacklisted,
+    /** */    
     DDRedeemCodeStatusForged
-} DDRedeemCodeStatus;
+};
 
 static inline const char *stringFromDDRedeemCodeStatus(DDRedeemCodeStatus codeStatus)
 {
@@ -164,32 +213,51 @@ static inline const char *stringFromDDRedeemCodeStatus(DDRedeemCodeStatus codeSt
 
 @interface DDRedeemCode : NSObject <UIAlertViewDelegate, UITextFieldDelegate>
 
-/*
- * @description This block will be executed after the code has been checked.
- *
+/**
+ @description This block will be executed after the code has been checked.
+ 
  */
 @property (nonatomic, assign) void (^completionBlock)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus);
 
+/**
+ @param completionBlock This is the block that will be executed upon completion of the showRedeemAlert: method.
+ */
 + (void)showPressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus))completionBlock;
+
+/**
+ @param completionBlock This is the block that will be executed upon completion of the showRedeemAlert: method.
+ @returns An instance of DDRedeemCode with completionBlock property set.
+ */
 + (instancetype)pressCodeAlertWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus))completionBlock;
 
-/*
- * @description
- * @returns A DDRedeemCode instance with completionBlock property set.
+/**
+ Designated initalizer
+ @param completionBlock This is the block that will be executed upon completion of the showRedeemAlert: method.
+ @returns A DDRedeemCode instance with completionBlock property set.
  */
 - (instancetype)initWithCompletionBlock:(void (^)(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus))completionBlock;
 
-/*
- * @description Shows UIAlertView, which contains an UITextView for redeem code enter.
- * @usage [[[DDRedeemCode alloc] initWithCompletionBlock:^(BOOL validCode){}] showRedeemAlert];
+/**
+ Shows UIAlertView, which contains an UITextView for redeem code enter.
+
+ Example Usage:
+ 
+    [[[DDRedeemCode alloc] initWithCompletionBlock:^(BOOL validCode, DDRedeemCodeType codeType, DDRedeemCodeStatus codeStatus){}] showRedeemAlert];
  */
 - (void)showRedeemAlert;
 
-/*
- * @description Check if a code is valid. If DEBUG flag is set, then also prints out the information about code validity.
- *
+/**
+ Check if a code is valid. If DEBUG flag is set, then also prints out the information about code validity.
+ @param redeemCode The redeem code you want to validate.
+ @returns BOOL
  */
 - (BOOL)isRedeemCodeValid:(NSString *)redeemCode;
+
+/**
+ This method redeems the provided code on the server and returns back the answer.
+ @param redeemCode The redeem code you want to redeem.
+ @warning If the code was redeemed once, it cannot be redeemed again.
+ */
 - (BOOL)redeemProvidedCode:(NSString *)redeemCode; // Returns YES if code redeemed, returns NO if not redeemed
 
 
