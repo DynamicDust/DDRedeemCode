@@ -130,7 +130,9 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     
     if (self) {
         self.completionBlock = completionBlock;
+#ifdef DEBUG
         NSLog(@"%@", [self makeRedeemCodeWithSeed:0x456a456bdf48e61a]);
+#endif
     }
     return self;
 }
