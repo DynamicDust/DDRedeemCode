@@ -4,8 +4,9 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/DDRedeemCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class adds missing feature to the Apple&apos;s In-App Purchases - ability to create redeem codes.</Abstract>
 			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+            <Availability type="html"></Availability>
 			
 			<NodeRef refid="1"/>
 		</Token>
@@ -14,7 +15,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/setCompletionBlock:</TokenIdentifier>
 			<Abstract type="html">@description This block will be executed after the code has been checked.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ) completionBlock</Declaration>
 			
@@ -26,7 +27,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/completionBlock</TokenIdentifier>
 			<Abstract type="html">@description This block will be executed after the code has been checked.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ) completionBlock</Declaration>
 			
@@ -38,7 +39,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/DDRedeemCode/completionBlock</TokenIdentifier>
 			<Abstract type="html">@description This block will be executed after the code has been checked.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ) completionBlock</Declaration>
 			
@@ -50,7 +51,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/DDRedeemCode/showPressCodeAlertWithCompletionBlock:</TokenIdentifier>
 			<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>+ (void)showPressCodeAlertWithCompletionBlock:(void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ))completionBlock</Declaration>
 			<Parameters>
@@ -67,7 +68,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/DDRedeemCode/pressCodeAlertWithCompletionBlock:</TokenIdentifier>
 			<Abstract type="html">This is the block that will be executed upon completion of the showRedeemAlert: method.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>+ (instancetype)pressCodeAlertWithCompletionBlock:(void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ))completionBlock</Declaration>
 			<Parameters>
@@ -84,7 +85,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/initWithCompletionBlock:</TokenIdentifier>
 			<Abstract type="html">Designated initalizer</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithCompletionBlock:(void ( ^ ) ( BOOL validCode , DDRedeemCodeType codeType , DDRedeemCodeStatus codeStatus ))completionBlock</Declaration>
 			<Parameters>
@@ -101,7 +102,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/showRedeemAlert</TokenIdentifier>
 			<Abstract type="html">Shows UIAlertView, which contains an UITextView for redeem code enter.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>- (void)showRedeemAlert</Declaration>
 			
@@ -113,7 +114,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/isRedeemCodeValid:</TokenIdentifier>
 			<Abstract type="html">Check if a code is valid. If DEBUG flag is set, then also prints out the information about code validity.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>- (BOOL)isRedeemCodeValid:(NSString *)redeemCode</Declaration>
 			<Parameters>
@@ -130,7 +131,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DDRedeemCode/redeemProvidedCode:</TokenIdentifier>
 			<Abstract type="html">This method redeems the provided code on the server and returns back the answer.</Abstract>
-			<DeclaredIn>DDRedeemCode.h</DeclaredIn>			
+			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
 			
 			<Declaration>- (BOOL)redeemProvidedCode:(NSString *)redeemCode</Declaration>
 			<Parameters>
@@ -144,5 +145,6 @@
             <NodeRef refid="1"/>
 		</Token>
 		
+        
 	</File>
 </Tokens>

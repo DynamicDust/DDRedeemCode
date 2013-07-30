@@ -6,10 +6,48 @@
 			<TokenIdentifier>//apple_ref/c/tdef/DDRedeemCodeStatus</TokenIdentifier>
 			<Abstract type="html">This enum is used to set a status of a code. Mainly useful for server-side validation and partial serial number verification.</Abstract>
 			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+            <Availability type="html"></Availability>
 			
 			<NodeRef refid="4"/>
 		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeStatusValid</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeStatusValid</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeStatusInvalid</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeStatusInvalid</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeStatusBlacklisted</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeStatusBlacklisted</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeStatusForged</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeStatusForged</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
 	</File>
 </Tokens>

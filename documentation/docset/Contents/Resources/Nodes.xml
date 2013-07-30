@@ -26,6 +26,18 @@
 					</Subnodes>
 				</Node>
 				
+                
+                
+				<Node type="folder">
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						
+					</Subnodes>
+				</Node>
 				
 			</Subnodes>
         </Node>
@@ -42,6 +54,19 @@
 			<Path>Categories/NSData+CRC.html</Path>
 		</Node>
 		
+        
+        <Node id="3">
+			<Name>DDRedeemCodeSecurityType</Name>
+			<Path>Constants/DDRedeemCodeSecurityType.html</Path>
+		</Node>
+		<Node id="4">
+			<Name>DDRedeemCodeStatus</Name>
+			<Path>Constants/DDRedeemCodeStatus.html</Path>
+		</Node>
+		<Node id="5">
+			<Name>DDRedeemCodeType</Name>
+			<Path>Constants/DDRedeemCodeType.html</Path>
+		</Node>
 		
 	</Library>
 </DocSetNodes>

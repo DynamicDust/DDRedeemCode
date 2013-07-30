@@ -4,17 +4,44 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/c/tdef/DDRedeemCodeSecurityType</TokenIdentifier>
-			<Abstract type="html">Levels of security/validation.
-- A. Local Verification
-- 1. Simple uses CRC32 and has much shorter numeric codes.
-- 2. Complex uses partial serial number verification and has 12-character alpha-numeric keys.
-- B. Server Side Verification
-- Verifies the redeem code against a specified remote server.</Abstract>
+			<Abstract type="html">This type definition is used to determine current verification mode.</Abstract>
 			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+            <Availability type="html"></Availability>
 			
 			<NodeRef refid="3"/>
 		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeSecurityTypeLocalSimple</TokenIdentifier>
+            <Abstract type="html">Simple security type using CRC32 to check code.
+     </Abstract>
+            <Declaration>DDRedeemCodeSecurityTypeLocalSimple</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeSecurityTypeLocalComplex</TokenIdentifier>
+            <Abstract type="html">Complex security type using partial code verification to verify provided code.
+     </Abstract>
+            <Declaration>DDRedeemCodeSecurityTypeLocalComplex</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeSecurityTypeServerSide</TokenIdentifier>
+            <Abstract type="html">This security type verifies the code against a specified server.
+     </Abstract>
+            <Declaration>DDRedeemCodeSecurityTypeServerSide</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
 	</File>
 </Tokens>

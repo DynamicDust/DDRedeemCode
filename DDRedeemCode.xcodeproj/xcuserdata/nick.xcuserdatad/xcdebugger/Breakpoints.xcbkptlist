@@ -39,8 +39,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "374"
          endingLineNumber = "374"
-         landmarkName = "-getCodeByteWithSeed:andByteA:byteB:byteC:"
-         landmarkType = "5">
+         landmarkName = "@implementation DDRedeemCode"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -52,8 +52,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "390"
          endingLineNumber = "390"
-         landmarkName = "-getCodeChecksum:"
-         landmarkType = "5">
+         landmarkName = "@implementation DDRedeemCode"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -65,8 +65,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "506"
          endingLineNumber = "506"
-         landmarkName = "-makeRedeemCodeWithSeed:"
-         landmarkType = "5">
+         landmarkName = "@implementation DDRedeemCode"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -104,8 +104,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "418"
          endingLineNumber = "418"
-         landmarkName = "-checkCodeChecksum:"
-         landmarkType = "5">
+         landmarkName = "@implementation DDRedeemCode"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -117,8 +117,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "598"
          endingLineNumber = "598"
-         landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
-         landmarkType = "5">
+         landmarkName = "@implementation DDRedeemCode"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -130,8 +130,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "432"
          endingLineNumber = "432"
-         landmarkName = "-checkCode:"
-         landmarkType = "5">
+         landmarkName = "@implementation DDRedeemCode"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

@@ -90,19 +90,19 @@
 
 
 /** 
- The NSData class category, which adds `CRC32` support for checking codes. It is used in the most simplest code verification.
- 
- - Cons of this approach are that the `CRC32` is not very secure and doesn't have perfect accuracy.  
- - Pros, that it produces a short 10 characters long decimal or 8 characters long hexadecimal string, that is very easy to enter.
- @bug Implement something more secure than `CRC32` for complex security.
+ *The NSData class category, which adds `CRC32` support for checking codes. It is used in the most simplest code verification.
+ *
+ * - Cons of this approach are that the `CRC32` is not very secure and doesn't have perfect accuracy.
+ * - Pros, that it produces a short 10 characters long decimal or 8 characters long hexadecimal string, that is very easy to enter.
+ * @bug Implement something more secure than `CRC32` for complex security.
  */
 @interface NSData (CRC)
 /**
- Calculates the CRC32 with default seed and polynomial values.
- 
- The default values are:
- - `0xFFFFFFFFL` for seed
- - `0xEDB88320L` for seed
+ * Calculates the CRC32 with default seed and polynomial values.
+ *
+ * The default values are:
+ * - `0xFFFFFFFFL` for seed
+ * - `0xEDB88320L` for seed
  */
 -(uint32_t) calculateCRC32;
 /**
@@ -133,19 +133,34 @@
 //--------------------------------------------------------------
 
 /**
- * Levels of security/validation.
- * - A. Local Verification
- *    - 1. Simple uses CRC32 and has much shorter numeric codes.
- *    - 2. Complex uses partial serial number verification and has 12-character alpha-numeric keys.
- * - B. Server Side Verification
- *    - Verifies the redeem code against a specified remote server.
+ * This type definition is used to determine current verification mode. 
+ *
+ * Before starting, set the `DD_SECURITY_TYPE` macro in the beginning of this header file to the corespodning type.
+ * 
+ * **A.** Local Verification
+ *
+ *      - **Simple**, which uses CRC32 and has much shorter numeric codes. Ability to generate temporary codes *(hour, day, week, month and year)*, besides master and custom codes.
+ *      - **Complex**, which uses partial serial number verification and generates 20-character alpha-numeric keys. Valid keys have no time limitation.
+ * 
+ * **B.** Server Side Verification
+ *
+ *      - **Remote Server**, which verifies the code against it's database of allowed codes.
+ *
+ * If you have chosen the server side verification, then **don't forget to configure** all macros starting with **`DD_SERVER_`**. 
+ * @warning The macro `DD_SECURITY_TYPE` has to be set to a proper value before building your project with **DDRedeemCode**.
  */
 typedef NS_ENUM(NSUInteger, DDRedeemCodeSecurityType) {
-    /** Basic security type using CRC32 to check codes. */
+    /** 
+     * Simple security type using CRC32 to check code.
+     */
     DDRedeemCodeSecurityTypeLocalSimple,
-    /** Complex security type using partial code verification to check code. */
+    /** 
+     * Complex security type using partial code verification to verify provided code.
+     */
     DDRedeemCodeSecurityTypeLocalComplex,
-    /** This type checks the code against a specified server. */
+    /** 
+     * This security type verifies the code against a specified server.
+     */
     DDRedeemCodeSecurityTypeServerSide
 };
 
@@ -210,7 +225,11 @@ static inline const char *stringFromDDRedeemCodeStatus(DDRedeemCodeStatus codeSt
 //--------------------------------------------------------------
 #pragma mark - DDRedeemCode -
 //--------------------------------------------------------------
-
+/**
+ * This class adds missing feature to the Apple's In-App Purchases - ability to create redeem codes.
+ *
+ * It is mainly useful when, for example, sending your application to press for review.
+ */
 @interface DDRedeemCode : NSObject <UIAlertViewDelegate, UITextFieldDelegate>
 
 /**

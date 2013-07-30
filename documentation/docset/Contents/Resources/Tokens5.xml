@@ -6,10 +6,102 @@
 			<TokenIdentifier>//apple_ref/c/tdef/DDRedeemCodeType</TokenIdentifier>
 			<Abstract type="html">This enum is used to check the code type.</Abstract>
 			<DeclaredIn>DDRedeemCode.h</DeclaredIn>
+            <Availability type="html"></Availability>
 			
 			<NodeRef refid="5"/>
 		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleHourly</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleHourly</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleDaily</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleDaily</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleWeekly</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleWeekly</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleMonthly</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleMonthly</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleYearly</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleYearly</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleMaster</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleMaster</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleCount</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleCount</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeSimpleCustom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeSimpleCustom</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeNone</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeNone</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DDRedeemCodeTypeComplex</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DDRedeemCodeTypeComplex</Declaration>
+            <Availability type="html"></Availability>
+            <DeclaredIn>DDRedeemCode.h</DeclaredIn>
+			
+        </Token>
+        
 	</File>
 </Tokens>
