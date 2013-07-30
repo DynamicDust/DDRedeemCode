@@ -1,18 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
-    <id>http://nickskull.github.io/DDRedeemCode//DDRedeemCode.atom/20130730124807</id>
+    <id>http://nickskull.github.io/DDRedeemCode//DDRedeemCode.atom/20130730132828</id>
     <title type="text">DDRedeemCode Documentation</title>
     <rights>Copyright © 2013 DynamicDust. All rights reserved.</rights>
     <link rel="self" href="http://nickskull.github.io/DDRedeemCode//DDRedeemCode.atom"></link>
     <docset:publisherName>DynamicDust</docset:publisherName>
     <docset:publisherID>com.dynamicdust.documentation</docset:publisherID>
-    <updated>2013-07-30T12:48:07+02:00</updated>
+    <updated>2013-07-30T13:28:28+02:00</updated>
     <entry>
         <id>tag:nickskull.github.io,2013-07-30:com.dynamicdust.DDRedeemCode/1.0.0</id>
         <title type="text">DDRedeemCode Documentation</title>
-        <updated>2013-07-30T12:48:07+02:00</updated>
+        <updated>2013-07-30T13:28:28+02:00</updated>
         <content type="text">DDRedeemCode Documentation (v1.0.0)</content>
-        <link rel="enclosure" type="application/octet-stream" href="http:/nickskull.github.io/DDRedeemCode/com.dynamicdust.DDRedeemCode-1.0.xar" length="53339"></link>
+        <link rel="enclosure" type="application/octet-stream" href="http:/nickskull.github.io/DDRedeemCode/com.dynamicdust.DDRedeemCode-1.0.xar" length="53447"></link>
         <docset:identifier>com.dynamicdust.DDRedeemCode</docset:identifier>
         <docset:version>1.0.0</docset:version>
         <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>

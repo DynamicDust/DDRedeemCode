@@ -22,7 +22,9 @@
 
 //--------------------------------------------------------------
 // Simple Verification
+#if DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalSimple
 //--------------------------------------------------------------
+
 /*
  * @description This is the master secret which is used for redeem code generation. You have to change it to something secure. I suggest and md5 of a file, or use some password generator.
  */
@@ -45,15 +47,16 @@
         #error For security purposes, please set DD_SIMPLE_LOG_CODES to 0 before building for Release.
     #endif
 #endif
-
+#endif
 //--------------------------------------------------------------
 // Complex Verification
+#if DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalComplex
 //--------------------------------------------------------------
 
 /*
  *
  */
-#define DD_COMPLEX_SEED_BLACKLIST                   @[@"123456789", @"987654321"]
+#define DD_COMPLEX_SEED_BLACKLIST                   @[@"", @""]
 
 /*
  *
@@ -70,20 +73,24 @@
                                                         1,      2,      91,     \
                                                         7,      1,      100     }
 
+#endif
 //--------------------------------------------------------------
 // Server-Side Based Verification
+#if DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeServerSide
 //--------------------------------------------------------------
 
+#define DD_SERVER_ADDRESS                           @"http://www.example.com/redeem-code-server/"
+
+#define DD_SERVER_APP_ID                            @""
+#define DD_SERVER_APP_SECRET                        @""
 
 
 
-
-
-
+#endif
+//--------------------------------------------------------------
 #ifndef NS_ENUM
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
-
 //--------------------------------------------------------------
 #pragma mark - NSData Category (CRC) -
 //--------------------------------------------------------------

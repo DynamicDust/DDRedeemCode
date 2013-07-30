@@ -368,6 +368,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
 }
 
 //--------------------------------------------------------------
+#if DD_SECURITY_TYPE == DDRedeemCodeSecurityTypeLocalComplex
 #pragma mark - Partial Redeem Code Verification -
 //--------------------------------------------------------------
 // Based on this article by Brandon Staggs
@@ -547,7 +548,7 @@ void CRC32Table(uint32_t *table, uint32_t poly)
     return result;
 }
 #endif
-
+#endif
 //--------------------------------------------------------------
 #pragma mark - UIAlertView -
 //--------------------------------------------------------------
